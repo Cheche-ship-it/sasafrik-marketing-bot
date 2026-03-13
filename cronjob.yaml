@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: social-media-post
+spec:
+  # Runs at 05:00, 06:30, 07:00, 10:00, 12:00, 13:00, 14:00, 16:00, 18:00, 21:00 every day (10 times per day)
+  schedule: "0 5,6,7,10,12,13,14,16,18,21 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: social-media-pro
+            image: nduhiu254/social-media-pro:v1.0.7
+            imagePullPolicy: Always
+            envFrom:
+            - secretRef:
+                name: social-media-env  # Store your .env as a Kubernetes Secret
+          restartPolicy: OnFailure

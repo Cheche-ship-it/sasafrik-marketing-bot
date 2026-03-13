@@ -1,0 +1,12 @@
+.env
+env/
+venv/
+*.env
+*.venv
+Usage.md
+_pycache__/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd   
+Usage.md
