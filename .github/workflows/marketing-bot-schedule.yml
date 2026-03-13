@@ -1,0 +1,32 @@
+name: Marketing Bot Schedule
+
+on:
+  schedule:
+    - cron: '45 7 * * *'  # 7:45 AM UTC
+    - cron: '0 11 * * *'  # 11:00 AM UTC
+    - cron: '0 17 * * *'  # 5:00 PM UTC
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run the marketing bot
+      run: python main.py
+      env:
+        # Add any required environment variables here
+        # For example, if you have secrets in GitHub, reference them like ${{ secrets.MY_SECRET }}
