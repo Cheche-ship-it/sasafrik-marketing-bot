@@ -345,7 +345,7 @@ The post should:
 - Format the content with proper spacing and line breaks where helpful.
 - Only output a single message (no multiple options).
 - Include relevant trending Kenyan hashtags.
-- Add a CTA to visit https://sasafrik.com and encourage contacting SasAfrik on WhatsApp at +254106793974 for enquiries/free quotes/free consultations.
+- Add a CTA to visit 🔗 https://sasafrik.com and encourage contacting SasAfrik on WhatsApp 💬 +254106793974 for enquiries/free quotes/free consultations.
 
 Topic: "{topic}"
 """
@@ -390,7 +390,7 @@ The post should:
 - Format the content with clear spacing and line breaks.
 - Only output a single message (no multiple options).
 - Include relevant trending Kenyan hashtags.
-- Add a CTA to visit https://sasafrik.com and prompt readers to contact SasAfrik on WhatsApp at +254106793974 for enquiries/free quotes/free consultations.
+- Add a CTA to visit 🔗 https://sasafrik.com and prompt readers to contact SasAfrik on WhatsApp 💬 +254106793974 for enquiries/free quotes/free consultations.
 
 Topic: "{topic}"
 """
