@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from requests_oauthlib import OAuth1Session, OAuth1
 from PIL import Image, ImageDraw, ImageFont
-import qrcode  # Open-source QR generator engine
 
 # Load environment variables from .env
 load_dotenv()
@@ -145,121 +144,148 @@ def call_flux_api_and_save(flux_prompt, filename="temp_flux_raw.jpg"):
 # --- Programmatic Branding Compositing Engine ---
 def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename="masterpiece_final.jpg"):
     """
-    Applies high-end graphic design updates. Generates a fully scannable QR code by 
-    wrapping it inside an absolute white isolated quiet zone and compositing with masks to guarantee scan operations.
+    Applies high-end graphic design updates. Automatically computes the exact vertical space
+    occupied by the company logo to push the capabilities sidebar safely below it.
     """
-    print("Initiating brand overlay layout composition matrix...")
+    print("Initiating expert branding typographic design card composition...")
     try:
         # 1. Load Background Canvas
         base = Image.open(base_image_path).convert("RGBA")
         base_w, base_h = base.size
+
+        # Create overlay channel layer
+        overlay_layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        draw_overlay = ImageDraw.Draw(overlay_layer)
+
+        # Baseline vertical offset tracker to ensure no overlapping can happen
+        logo_bottom_y = int(base_h * 0.05) 
 
         # 2. Overlay Logo Layer with Balanced Margins
         if os.path.exists(logo_path):
             logo = Image.open(logo_path).convert("RGBA")
             logo_w, logo_h = logo.size
             
-            target_w = int(base_w * 0.18)
+            target_w = int(base_w * 0.22)
             target_h = int(logo_h * (target_w / logo_w))
             logo_scaled = logo.resize((target_w, target_h), Image.Resampling.LANCZOS)
             
             margin_offset = int(base_w * 0.05)
             base.alpha_composite(logo_scaled, (margin_offset, margin_offset))
+            
+            # CRITICAL DESIGN FIX: Compute exact layout geometry occupied by logo
+            logo_bottom_y = margin_offset + target_h
             print("Successfully composited corporate logo overlay layer.")
         else:
-            print(f"Notice: Asset file '{logo_path}' missing. Moving straight to text overlays.")
+            print(f"Notice: Asset file '{logo_path}' missing. Processing layout via default baseline metrics.")
 
-        # 3. Generate fully functioning WhatsApp Inquiry QR Code with Quiet Zone
-        print("Generating scan-ready WhatsApp QR Code module...")
-        whatsapp_number = "254720000803"
-        inquiry_text = "Hello SasAfrik, I saw your marketing showcase post and would like to make an inquiry regarding your enterprise software solutions."
-        encoded_text = urllib.parse.quote(inquiry_text)
-        whatsapp_url = f"https://wa.me/{whatsapp_number}?text={encoded_text}"
-        
-        qr = qrcode.QRCode(
-            version=1,
-            error_correction=qrcode.constants.ERROR_CORRECT_M,
-            box_size=10,
-            border=2,
-        )
-        qr.add_data(whatsapp_url)
-        qr.make(fit=True)
-        
-        qr_raw_img = qr.make_image(fill_color="#0F172A", back_color="white").convert("RGBA")
-        qr_side_size = int(base_h * 0.11)
-        
-        # Isolated QR white bounding box canvas for "Quiet Zone" scanner compliance
-        qr_container = Image.new("RGBA", (qr_side_size, qr_side_size), (255, 255, 255, 255))
-        inner_padding = int(qr_side_size * 0.06)
-        qr_scaled_matrix = qr_raw_img.resize((qr_side_size - (inner_padding * 2), qr_side_size - (inner_padding * 2)), Image.Resampling.LANCZOS)
-        qr_container.paste(qr_scaled_matrix, (inner_padding, inner_padding), qr_scaled_matrix)
-
-        # 4. Create a High-Contrast Branding Banner (Glassmorphism Layout Block)
-        overlay_layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
-        draw_overlay = ImageDraw.Draw(overlay_layer)
-        
-        line1 = "📞 CALL / WHATSAPP: +254 720 000 803"
-        line2 = "🌐 WEB: sasafrik.com   |   ✉️ hello@sasafrik.com"
-        
-        font_size = int(base_h * 0.024)
+        # 3. Dynamic Font Configuration Matrix
         try:
-            font = ImageFont.truetype("DejaVuSans-Bold.ttf", font_size)
+            font_title = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.026))
+            font_body = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.021))
+            font_footer = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.018))
         except Exception:
             try:
-                font = ImageFont.truetype("arial.ttf", font_size)
+                font_title = ImageFont.truetype("arial.ttf", int(base_h * 0.026))
+                font_body = ImageFont.truetype("arial.ttf", int(base_h * 0.021))
+                font_footer = ImageFont.truetype("arial.ttf", int(base_h * 0.018))
             except Exception:
-                font = ImageFont.load_default()
+                font_title = font_body = font_footer = ImageFont.load_default()
 
-        def get_text_dims(text_str, font_obj):
-            try:
-                bbox = draw_overlay.textbbox((0, 0), text_str, font=font_obj)
-                return bbox[2] - bbox[0], bbox[3] - bbox[1]
-            except AttributeError:
-                return draw_overlay.textsize(text_str, font=font_obj) if hasattr(draw_overlay, 'textsize') else (int(base_w*0.5), font_size)
-
-        w1, h1 = get_text_dims(line1, font)
-        w2, h2 = get_text_dims(line2, font)
+        # 4. Capability Panel Layout Setup (Expert Structural Content)
+        header_text = "WE DESIGN & DEVELOP"
+        capabilities = [
+            "• Web Platforms & Portals",
+            "• Enterprise API Integrations",
+            "• High-Scale Mobile Apps",
+            "• Full-Stack Applications",
+            "• Workflow Automation Engines",
+            "• Custom AI Conversational Bots"
+        ]
         
-        max_text_w = max(w1, w2)
-        text_block_h = h1 + h2 + int(base_h * 0.015)
+        # Bottom text block configurations
+        footer_line1 = "📞 Call / WhatsApp: +254 720 000 803"
+        footer_line2 = "🌐 sasafrik.com  |  ✉️ hello@sasafrik.com"
 
-        inner_gap = int(base_w * 0.04)
-        card_padding_x = int(base_w * 0.04)
-        card_padding_y = int(base_h * 0.02)
+        # Width and Height dimensions setup for the panel container
+        card_w = int(base_w * 0.48)
+        card_h = int(base_h * 0.44)
+        card_x1 = int(base_w * 0.05)
         
-        card_w = qr_side_size + inner_gap + max_text_w + (card_padding_x * 2)
-        card_h = max(qr_side_size, text_block_h) + (card_padding_y * 2)
+        # RESOLUTION OPTIMIZATION: Anchor the card starting y coordinate programmatically below the logo 
+        card_y1 = logo_bottom_y + int(base_h * 0.03)
         
-        card_x1 = int((base_w - card_w) / 2)
-        card_y1 = int(base_h - card_h - int(base_h * 0.04))
-        card_x2 = card_x1 + card_w
-        card_y2 = card_y1 + card_h
+        # Internal text margin alignment indentation base
+        text_padding_left = int(card_w * 0.06)
 
+        # Render Premium Dense Charcoal Dashboard Card Container Matrix
         draw_overlay.rounded_rectangle(
-            [card_x1, card_y1, card_x2, card_y2],
-            radius=14,
-            fill=(15, 23, 42, 230)
+            [card_x1, card_y1, card_x1 + card_w, card_y1 + card_h],
+            radius=16,
+            fill=(15, 23, 42, 240),      # High-density Slate backdrop
+            outline=(51, 65, 85, 255),   # Sharp slate border accents
+            width=2
         )
 
-        qr_pos_x = card_x1 + card_padding_x
-        qr_pos_y = card_y1 + int((card_h - qr_side_size) / 2)
+        # Draw Header Label Text Accent (Safely sitting in non-overlapping space)
+        draw_overlay.text(
+            (card_x1 + text_padding_left, card_y1 + int(card_h * 0.08)), 
+            header_text, 
+            fill=(56, 189, 248, 255),     # Premium Sky Blue primary color
+            font=font_title
+        )
+
+        # Print Capabilities List Menu Options safely nested inside the new bounds
+        y_cursor = card_y1 + int(card_h * 0.22)
+        spacing_offset = int(card_h * 0.11)
         
-        # CRITICAL SCAN FIX: Pass the container canvas itself as the alpha mask parameter 
-        # to ensure pixel-perfect white border isolation on the dark slate banner container.
-        overlay_layer.paste(qr_container, (qr_pos_x, qr_pos_y), qr_container)
+        for item in capabilities:
+            draw_overlay.text(
+                (card_x1 + text_padding_left, y_cursor), 
+                item, 
+                fill=(255, 255, 255, 255), 
+                font=font_body
+            )
+            y_cursor += spacing_offset
 
-        text_start_x = qr_pos_x + qr_side_size + inner_gap
-        line1_y = card_y1 + card_padding_y + int((card_h - (card_padding_y * 2) - text_block_h) / 2)
-        line2_y = line1_y + h1 + int(base_h * 0.015)
+        # 5. Position Centered Horizontal Bottom Corporate Contact Banner
+        banner_w = int(base_w * 0.65)
+        banner_h = int(base_h * 0.075)
+        banner_x1 = int((base_w - banner_w) / 2)
+        banner_y1 = int(base_h - banner_h - int(base_h * 0.04))
 
-        draw_overlay.text((text_start_x, line1_y), line1, fill=(255, 255, 255, 255), font=font)
-        draw_overlay.text((text_start_x, line2_y), line2, fill=(241, 245, 249, 220), font=font)
+        draw_overlay.rounded_rectangle(
+            [banner_x1, banner_y1, banner_x1 + banner_w, banner_y1 + banner_h],
+            radius=12,
+            fill=(15, 23, 42, 245),
+            outline=(51, 65, 85, 255),
+            width=1
+        )
 
+        # Calculate text sizing offsets safely
+        def get_text_w(text_str, font_obj):
+            try:
+                bbox = draw_overlay.textbbox((0, 0), text_str, font=font_obj)
+                return bbox[2] - bbox[0]
+            except AttributeError:
+                return draw_overlay.textsize(text_str, font=font_obj)[0] if hasattr(draw_overlay, 'textsize') else int(banner_w * 0.8)
+
+        w_f1 = get_text_w(footer_line1, font_footer)
+        w_f2 = get_text_w(footer_line2, font_footer)
+
+        draw_overlay.text(
+            (banner_x1 + int((banner_w - w_f1) / 2), banner_y1 + int(banner_h * 0.18)), 
+            footer_line1, fill=(255, 255, 255, 255), font=font_footer
+        )
+        draw_overlay.text(
+            (banner_x1 + int((banner_w - w_f2) / 2), banner_y1 + int(banner_h * 0.54)), 
+            footer_line2, fill=(241, 245, 249, 220), font=font_footer
+        )
+
+        # Perform master composition merge pass
         final_composite = Image.alpha_composite(base, overlay_layer)
-        
         final_rgb = final_composite.convert("RGB")
         final_rgb.save(output_filename, "JPEG", quality=98)
-        print("Brand contact card and functional QR inquiry layers compiled perfectly.")
+        print("Expert graphics overlay layouts assembled and printed flawlessly.")
         return output_filename
 
     except Exception as e:
@@ -342,7 +368,7 @@ def generate_facebook_ai_content(topic):
 You are an expert Chief Marketing Officer. Write ONE engaging, conversion-optimized Facebook post (max 550 characters) targeting enterprise executives regarding: '{topic}'.
 - Craft a compelling, urgent hook relevant to scaling business performance in Africa.
 - Include elegant paragraph line breaks and clear bullet points for readability.
-- Conclude with a strong, conversion-focused Call to Action to scan the white QR code attached on the image to chat with our engineering desk directly, visit 🔗 https://www.sasafrik.com, or reach out via WhatsApp 💬 +254720000803.
+- Conclude with a strong, conversion-focused Call to Action directing them to view our services panel detailed on the image layout and connect with our team via WhatsApp 💬 +254720000803 or visit 🔗 https://www.sasafrik.com.
 - Output ONLY the final post body text.
 """
     try:
@@ -353,7 +379,7 @@ You are an expert Chief Marketing Officer. Write ONE engaging, conversion-optimi
 def generate_twitter_ai_content(topic):
     if not model: 
         return "Pioneering enterprise operations scaling from Nairobi to the global stage."
-    prompt = f"Write one concise, high-impact marketing tweet for X (max 190 characters) prompting users to look at the infographic design and scan the custom QR link regarding: '{topic}'."
+    prompt = f"Write one concise, high-impact marketing tweet for X (max 190 characters) prompting users to check out our product capability stack listed on the infographic regarding: '{topic}'."
     try:
         return model.generate_content(prompt).text.strip()
     except Exception:
@@ -393,7 +419,7 @@ def run_orchestrated_pipeline():
             print("System Timeout: External API failed to emit graphic binaries. Ending cycle.")
             return
 
-        # 3. Composite brand layers and scannable QR layouts using Pillow locally
+        # 3. Composite brand layers using Pillow locally
         if not composite_masterpiece(raw_canvas, "logo.png", final_canvas):
             print("Composition Error: Graphic compositor failed to watermark assets. Ending cycle.")
             return
