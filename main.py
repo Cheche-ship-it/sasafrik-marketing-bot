@@ -144,10 +144,10 @@ def call_flux_api_and_save(flux_prompt, filename="temp_flux_raw.jpg"):
 # --- Programmatic Branding Compositing Engine ---
 def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename="masterpiece_final.jpg"):
     """
-    Applies high-end graphic design updates. Automatically computes the exact vertical space
-    occupied by the company logo to push the capabilities sidebar safely below it.
+    Applies high-end graphic design updates. Composites a beautifully balanced semi-transparent
+    capabilities card with dark drop-shadow text formatting to preserve readability.
     """
-    print("Initiating expert branding typographic design card composition...")
+    print("Initiating senior graphic designer layout composition passing phase...")
     try:
         # 1. Load Background Canvas
         base = Image.open(base_image_path).convert("RGBA")
@@ -172,11 +172,10 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
             margin_offset = int(base_w * 0.05)
             base.alpha_composite(logo_scaled, (margin_offset, margin_offset))
             
-            # CRITICAL DESIGN FIX: Compute exact layout geometry occupied by logo
             logo_bottom_y = margin_offset + target_h
             print("Successfully composited corporate logo overlay layer.")
         else:
-            print(f"Notice: Asset file '{logo_path}' missing. Processing layout via default baseline metrics.")
+            print(f"Notice: Asset file '{logo_path}' missing. Processing layout via default metrics.")
 
         # 3. Dynamic Font Configuration Matrix
         try:
@@ -210,40 +209,48 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
         card_w = int(base_w * 0.48)
         card_h = int(base_h * 0.44)
         card_x1 = int(base_w * 0.05)
-        
-        # RESOLUTION OPTIMIZATION: Anchor the card starting y coordinate programmatically below the logo 
         card_y1 = logo_bottom_y + int(base_h * 0.03)
         
         # Internal text margin alignment indentation base
         text_padding_left = int(card_w * 0.06)
 
-        # Render Premium Dense Charcoal Dashboard Card Container Matrix
+        # DESIGN FIX: Lower opacity to 160 (out of 255) for glassmorphism look
         draw_overlay.rounded_rectangle(
             [card_x1, card_y1, card_x1 + card_w, card_y1 + card_h],
             radius=16,
-            fill=(15, 23, 42, 240),      # High-density Slate backdrop
-            outline=(51, 65, 85, 255),   # Sharp slate border accents
+            fill=(15, 23, 42, 160),      # Frosted glass look: see-through but tinted
+            outline=(255, 255, 255, 35),  # Elegant subtle white reflection border accent
             width=2
         )
 
-        # Draw Header Label Text Accent (Safely sitting in non-overlapping space)
-        draw_overlay.text(
+        # Senior Graphic Technique: 1px Offset Drop-Shadows for Crisp Text Legibility
+        def draw_shadowed_text(draw_obj, position, text_str, text_color, font_obj, shadow_color=(0, 0, 0, 220)):
+            x, y = position
+            # Paint 4-directional dark drop-shadow border shield behind text
+            draw_obj.text((x + 1, y + 1), text_str, fill=shadow_color, font=font_obj)
+            draw_obj.text((x - 1, y + 1), text_str, fill=shadow_color, font=font_obj)
+            draw_obj.text((x, y), text_str, fill=text_color, font=font_obj)
+
+        # Render Header Label Text
+        draw_shadowed_text(
+            draw_overlay,
             (card_x1 + text_padding_left, card_y1 + int(card_h * 0.08)), 
             header_text, 
-            fill=(56, 189, 248, 255),     # Premium Sky Blue primary color
-            font=font_title
+            text_color=(56, 189, 248, 255),  # Sky Blue accent
+            font_obj=font_title
         )
 
-        # Print Capabilities List Menu Options safely nested inside the new bounds
+        # Print Capabilities List Menu Options
         y_cursor = card_y1 + int(card_h * 0.22)
         spacing_offset = int(card_h * 0.11)
         
         for item in capabilities:
-            draw_overlay.text(
+            draw_shadowed_text(
+                draw_overlay,
                 (card_x1 + text_padding_left, y_cursor), 
                 item, 
-                fill=(255, 255, 255, 255), 
-                font=font_body
+                text_color=(255, 255, 255, 255), 
+                font_obj=font_body
             )
             y_cursor += spacing_offset
 
@@ -253,11 +260,12 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
         banner_x1 = int((base_w - banner_w) / 2)
         banner_y1 = int(base_h - banner_h - int(base_h * 0.04))
 
+        # DESIGN FIX: Match the bottom contact info bar to the same transparency level
         draw_overlay.rounded_rectangle(
             [banner_x1, banner_y1, banner_x1 + banner_w, banner_y1 + banner_h],
             radius=12,
-            fill=(15, 23, 42, 245),
-            outline=(51, 65, 85, 255),
+            fill=(15, 23, 42, 175),
+            outline=(255, 255, 255, 30),
             width=1
         )
 
@@ -272,20 +280,22 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
         w_f1 = get_text_w(footer_line1, font_footer)
         w_f2 = get_text_w(footer_line2, font_footer)
 
-        draw_overlay.text(
+        draw_shadowed_text(
+            draw_overlay,
             (banner_x1 + int((banner_w - w_f1) / 2), banner_y1 + int(banner_h * 0.18)), 
-            footer_line1, fill=(255, 255, 255, 255), font=font_footer
+            footer_line1, text_color=(255, 255, 255, 255), font_obj=font_footer
         )
-        draw_overlay.text(
+        draw_shadowed_text(
+            draw_overlay,
             (banner_x1 + int((banner_w - w_f2) / 2), banner_y1 + int(banner_h * 0.54)), 
-            footer_line2, fill=(241, 245, 249, 220), font=font_footer
+            footer_line2, text_color=(241, 245, 249, 235), font_obj=font_footer
         )
 
         # Perform master composition merge pass
         final_composite = Image.alpha_composite(base, overlay_layer)
         final_rgb = final_composite.convert("RGB")
         final_rgb.save(output_filename, "JPEG", quality=98)
-        print("Expert graphics overlay layouts assembled and printed flawlessly.")
+        print("Glassmorphic semi-transparent UI layers successfully applied.")
         return output_filename
 
     except Exception as e:
