@@ -281,7 +281,7 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
         w_f1 = get_text_w(footer_line1, font_footer)
         w_f2 = get_text_w(footer_line2, font_footer)
 
-        # Centered text layouts across the full bar bounds now that QR code is removed
+        # Centered text layouts across the full bar bounds
         draw_high_contrast_text(
             draw_overlay,
             (banner_x1 + int((banner_w - w_f1) / 2), banner_y1 + int(banner_h * 0.18)), 
@@ -374,37 +374,33 @@ def append_hashtags_to_message(message, hashtags):
 
 def generate_facebook_ai_content(topic):
     if not model: 
-        return f"Transform your operations with SasAfrik's enterprise infrastructure suites. Contact our Nairobi office on +254720000803 or click here to chat: https://wa.me/254720000803. {topic}"
+        return "Scale your infrastructure. Chat with an engineer: https://wa.me/254720000803"
     
-    # ADVANCED COPYWRITING STUDIO: Length constraints completely lifted for maximum executive persuasion
+    # CRITICAL RESTRICTION: Dynamic total length must strictly fall between 1 and 80 characters
     prompt = f"""
-You are an elite, world-class Chief Marketing Officer and corporate copywriter for SasAfrik, a luxury-tier enterprise software consultancy in Nairobi. 
-Write a deeply compelling, authoritative, long-form Facebook post designed to capture the attention of corporate founders, enterprise executives, and tech directors regarding: '{topic}'.
+You are an expert corporate copywriter for SasAfrik. 
+Write ONE hyper-minimalist, high-end punchy hook and direct link line for Facebook regarding: '{topic}'.
 
-Strict Copywriting Guidelines:
-1. Ignore all length or character limits entirely. Write a thorough, persuasive corporate case study and capability pitch. 
-2. Open with a highly strategic, unforgettable business hook detailing structural operational issues or digital revenue scaling realities across modern enterprise environments in East Africa.
-3. Dive into robust technical value insights—breaking down how custom cloud architecture, systems integration, and clean engineering logic directly amplify an enterprise's bottom-line.
-4. Maintain a highly professional, expert, polished corporate tone throughout. Use clean layout paragraphs and elegant bullet structures to make reading smooth.
-5. You MUST append this exact Call-To-Action signature block at the tail end of your copy:
+STRICT CHARACTER CONSTRAINT ARCHITECTURE:
+- The ENTIRE string output (including letters, symbols, spaces, and the link) MUST be under 80 characters total.
+- Format style: [Sleek corporate hook string] -> wa.me/254720000803
+- Ensure it reads with elite prestige tier tone.
 
-🚀 INITIALIZE YOUR DIGITAL TRANSFORMATION:
-🌐 Corporate Website: https://www.sasafrik.com
-📞 Direct Office Hotline: +254 720 000 803
-💬 Connect Instantly via WhatsApp: Click this official routing link to launch a direct technical consultation with our engineering desk right now: https://wa.me/254720000803?text=Hello%20SasAfrik%2C%20I%20am%20interested%20in%20your%20software%20engineering%20services.
-
-Output ONLY the final post text. Do not introduce it with meta-comments.
+Output ONLY the final raw text string. No quotes or introductory text.
 """
     try:
-        return model.generate_content(prompt).text.strip()
+        content = model.generate_content(prompt).text.strip()
+        # Bulletproof runtime length safety truncation clip pass
+        if len(content) > 80:
+            return "Scale enterprise tech ecosystems. Chat: wa.me/254720000803"
+        return content
     except Exception:
-        return "Optimize your systems with our premium engineering options. Visit www.sasafrik.com, call +254720000803, or chat directly on WhatsApp: https://wa.me/254720000803"
+        return "Scale enterprise tech ecosystems. Chat: wa.me/254720000803"
 
 def generate_twitter_ai_content(topic):
     if not model: 
-        return "Pioneering enterprise operations scaling from Nairobi to the global stage. Visit sasafrik.com or chat on WhatsApp: https://wa.me/254720000803"
+        return "Pioneering enterprise operations scaling from Nairobi. Chat: https://wa.me/254720000803"
     
-    # SHORT-FORM CALL TO ACTION LINKS
     prompt = f"""
 Write one concise, high-impact marketing tweet for X (max 180 characters) regarding: '{topic}'.
 You MUST explicitly feature our website link (sasafrik.com) and our quick WhatsApp chat deep link (https://wa.me/254720000803) right inside the text.
@@ -457,6 +453,8 @@ def run_orchestrated_pipeline():
         fb_text = generate_facebook_ai_content(selected_topic)
         x_text = generate_twitter_ai_content(selected_topic)
         x_text_bundled = append_hashtags_to_message(x_text, trends)
+
+        print(f"Generated Facebook Text ({len(fb_text)} chars): {fb_text}")
 
         # 5. Broadcast final visual production to social feeds
         fb_status = post_image_to_facebook_page(final_canvas, fb_text)
