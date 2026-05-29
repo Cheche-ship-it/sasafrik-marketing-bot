@@ -19,6 +19,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 PROCESSED_FILE = os.getenv("PROCESSED_TOPICS_FILE", "processed_topics.json")
 SETTINGS_FILE = os.getenv("POST_SETTINGS_FILE", "post_settings.json")
 
+# BRANDING ASSET CONFIGURATION 
+LOGO_ASSET_PATH = "logo.png" 
+
 # FLUX Free Open-Source Cluster Router Matrix
 FLUX_BASE_URL = os.getenv("FLUX_BASE_URL", "https://image.pollinations.ai/p/")
 
@@ -142,12 +145,12 @@ def call_flux_api_and_save(flux_prompt, filename="temp_flux_raw.jpg"):
         return None
 
 # --- Programmatic Branding Compositing Engine ---
-def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename="masterpiece_final.jpg"):
+def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_filename="masterpiece_final.jpg"):
     """
-    Applies high-end graphic design updates. Composites a beautifully balanced semi-transparent
-    capabilities card with dark drop-shadow text formatting to preserve readability.
+    Assembles premium corporate layouts. Incorporates an alpha-glass panel overlay
+    and beautifully scales the centered corporate footer across the base landscape width.
     """
-    print("Initiating senior graphic designer layout composition passing phase...")
+    print("Initiating expert graphic design canvas layout generation...")
     try:
         # 1. Load Background Canvas
         base = Image.open(base_image_path).convert("RGBA")
@@ -165,7 +168,7 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
             logo = Image.open(logo_path).convert("RGBA")
             logo_w, logo_h = logo.size
             
-            target_w = int(base_w * 0.22)
+            target_w = int(base_w * 0.24)
             target_h = int(logo_h * (target_w / logo_w))
             logo_scaled = logo.resize((target_w, target_h), Image.Resampling.LANCZOS)
             
@@ -173,24 +176,25 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
             base.alpha_composite(logo_scaled, (margin_offset, margin_offset))
             
             logo_bottom_y = margin_offset + target_h
-            print("Successfully composited corporate logo overlay layer.")
+            print("Successfully composited company brand logo asset layer.")
         else:
-            print(f"Notice: Asset file '{logo_path}' missing. Processing layout via default metrics.")
+            print(f"Warning: Expected logo file missing at '{logo_path}'. Using dynamic fallback positioning bounds.")
+            logo_bottom_y = int(base_h * 0.12)
 
         # 3. Dynamic Font Configuration Matrix
         try:
             font_title = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.026))
             font_body = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.021))
-            font_footer = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.018))
+            font_footer = ImageFont.truetype("DejaVuSans-Bold.ttf", int(base_h * 0.020))
         except Exception:
             try:
                 font_title = ImageFont.truetype("arial.ttf", int(base_h * 0.026))
                 font_body = ImageFont.truetype("arial.ttf", int(base_h * 0.021))
-                font_footer = ImageFont.truetype("arial.ttf", int(base_h * 0.018))
+                font_footer = ImageFont.truetype("arial.ttf", int(base_h * 0.020))
             except Exception:
                 font_title = font_body = font_footer = ImageFont.load_default()
 
-        # 4. Capability Panel Layout Setup (Expert Structural Content)
+        # 4. Capability Panel Layout Setup ("WE DESIGN & DEVELOP")
         header_text = "WE DESIGN & DEVELOP"
         capabilities = [
             "• Web Platforms & Portals",
@@ -201,51 +205,49 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
             "• Custom AI Conversational Bots"
         ]
         
-        # Bottom text block configurations
+        # High-End Contact Layout definitions
         footer_line1 = "📞 Call / WhatsApp: +254 720 000 803"
         footer_line2 = "🌐 sasafrik.com  |  ✉️ hello@sasafrik.com"
 
-        # Width and Height dimensions setup for the panel container
-        card_w = int(base_w * 0.48)
+        # Structural bounding box dimensions setup
+        card_w = int(base_w * 0.50)
         card_h = int(base_h * 0.44)
         card_x1 = int(base_w * 0.05)
         card_y1 = logo_bottom_y + int(base_h * 0.03)
         
-        # Internal text margin alignment indentation base
         text_padding_left = int(card_w * 0.06)
 
-        # DESIGN FIX: Lower opacity to 160 (out of 255) for glassmorphism look
+        # Apply premium frosted glass panel backdrop container
         draw_overlay.rounded_rectangle(
             [card_x1, card_y1, card_x1 + card_w, card_y1 + card_h],
             radius=16,
-            fill=(15, 23, 42, 160),      # Frosted glass look: see-through but tinted
-            outline=(255, 255, 255, 35),  # Elegant subtle white reflection border accent
+            fill=(10, 15, 30, 180),       # Deep corporate premium navy tint
+            outline=(255, 255, 255, 45),  # Clean micro white reflection accent line
             width=2
         )
 
-        # Senior Graphic Technique: 1px Offset Drop-Shadows for Crisp Text Legibility
-        def draw_shadowed_text(draw_obj, position, text_str, text_color, font_obj, shadow_color=(0, 0, 0, 220)):
+        # VISIBILITY FIX: Elite 4-Way Omni-Directional Deep Shield Drop Shadows
+        def draw_high_contrast_text(draw_obj, position, text_str, text_color, font_obj, shadow_color=(0, 0, 0, 255)):
             x, y = position
-            # Paint 4-directional dark drop-shadow border shield behind text
-            draw_obj.text((x + 1, y + 1), text_str, fill=shadow_color, font=font_obj)
-            draw_obj.text((x - 1, y + 1), text_str, fill=shadow_color, font=font_obj)
+            for dx, dy in [(-1, -1), (1, -1), (-1, 1), (1, 1), (0, -2), (0, 2), (-2, 0), (2, 0)]:
+                draw_obj.text((x + dx, y + dy), text_str, fill=shadow_color, font=font_obj)
             draw_obj.text((x, y), text_str, fill=text_color, font=font_obj)
 
-        # Render Header Label Text
-        draw_shadowed_text(
+        # Print Core "WE DESIGN & DEVELOP" Section Heading
+        draw_high_contrast_text(
             draw_overlay,
             (card_x1 + text_padding_left, card_y1 + int(card_h * 0.08)), 
             header_text, 
-            text_color=(56, 189, 248, 255),  # Sky Blue accent
+            text_color=(56, 189, 248, 255),  # Sky blue tech accent
             font_obj=font_title
         )
 
-        # Print Capabilities List Menu Options
+        # Print Capabilities List
         y_cursor = card_y1 + int(card_h * 0.22)
         spacing_offset = int(card_h * 0.11)
         
         for item in capabilities:
-            draw_shadowed_text(
+            draw_high_contrast_text(
                 draw_overlay,
                 (card_x1 + text_padding_left, y_cursor), 
                 item, 
@@ -255,21 +257,20 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
             y_cursor += spacing_offset
 
         # 5. Position Centered Horizontal Bottom Corporate Contact Banner
-        banner_w = int(base_w * 0.65)
-        banner_h = int(base_h * 0.075)
+        banner_w = int(base_w * 0.74)  
+        banner_h = int(base_h * 0.095) 
         banner_x1 = int((base_w - banner_w) / 2)
         banner_y1 = int(base_h - banner_h - int(base_h * 0.04))
 
-        # DESIGN FIX: Match the bottom contact info bar to the same transparency level
+        # VISIBILITY FIX: Elevated opacity layer + stark border to make contact area clear
         draw_overlay.rounded_rectangle(
             [banner_x1, banner_y1, banner_x1 + banner_w, banner_y1 + banner_h],
             radius=12,
-            fill=(15, 23, 42, 175),
-            outline=(255, 255, 255, 30),
-            width=1
+            fill=(10, 15, 30, 245),       
+            outline=(56, 189, 248, 120),  # Sky blue ambient glow link border
+            width=2
         )
 
-        # Calculate text sizing offsets safely
         def get_text_w(text_str, font_obj):
             try:
                 bbox = draw_overlay.textbbox((0, 0), text_str, font=font_obj)
@@ -280,22 +281,22 @@ def composite_masterpiece(base_image_path, logo_path="logo.png", output_filename
         w_f1 = get_text_w(footer_line1, font_footer)
         w_f2 = get_text_w(footer_line2, font_footer)
 
-        draw_shadowed_text(
+        # Centered text layouts across the full bar bounds now that QR code is removed
+        draw_high_contrast_text(
             draw_overlay,
             (banner_x1 + int((banner_w - w_f1) / 2), banner_y1 + int(banner_h * 0.18)), 
             footer_line1, text_color=(255, 255, 255, 255), font_obj=font_footer
         )
-        draw_shadowed_text(
+        draw_high_contrast_text(
             draw_overlay,
             (banner_x1 + int((banner_w - w_f2) / 2), banner_y1 + int(banner_h * 0.54)), 
-            footer_line2, text_color=(241, 245, 249, 235), font_obj=font_footer
+            footer_line2, text_color=(255, 255, 255, 255), font_obj=font_footer
         )
 
         # Perform master composition merge pass
         final_composite = Image.alpha_composite(base, overlay_layer)
         final_rgb = final_composite.convert("RGB")
         final_rgb.save(output_filename, "JPEG", quality=98)
-        print("Glassmorphic semi-transparent UI layers successfully applied.")
         return output_filename
 
     except Exception as e:
@@ -373,27 +374,45 @@ def append_hashtags_to_message(message, hashtags):
 
 def generate_facebook_ai_content(topic):
     if not model: 
-        return f"Transform your operations with SasAfrik's enterprise infrastructure suites. Contact our Nairobi office on +254720000803. {topic}"
+        return f"Transform your operations with SasAfrik's enterprise infrastructure suites. Contact our Nairobi office on +254720000803 or click here to chat: https://wa.me/254720000803. {topic}"
+    
+    # ADVANCED COPYWRITING STUDIO: Length constraints completely lifted for maximum executive persuasion
     prompt = f"""
-You are an expert Chief Marketing Officer. Write ONE engaging, conversion-optimized Facebook post (max 550 characters) targeting enterprise executives regarding: '{topic}'.
-- Craft a compelling, urgent hook relevant to scaling business performance in Africa.
-- Include elegant paragraph line breaks and clear bullet points for readability.
-- Conclude with a strong, conversion-focused Call to Action directing them to view our services panel detailed on the image layout and connect with our team via WhatsApp 💬 +254720000803 or visit 🔗 https://www.sasafrik.com.
-- Output ONLY the final post body text.
+You are an elite, world-class Chief Marketing Officer and corporate copywriter for SasAfrik, a luxury-tier enterprise software consultancy in Nairobi. 
+Write a deeply compelling, authoritative, long-form Facebook post designed to capture the attention of corporate founders, enterprise executives, and tech directors regarding: '{topic}'.
+
+Strict Copywriting Guidelines:
+1. Ignore all length or character limits entirely. Write a thorough, persuasive corporate case study and capability pitch. 
+2. Open with a highly strategic, unforgettable business hook detailing structural operational issues or digital revenue scaling realities across modern enterprise environments in East Africa.
+3. Dive into robust technical value insights—breaking down how custom cloud architecture, systems integration, and clean engineering logic directly amplify an enterprise's bottom-line.
+4. Maintain a highly professional, expert, polished corporate tone throughout. Use clean layout paragraphs and elegant bullet structures to make reading smooth.
+5. You MUST append this exact Call-To-Action signature block at the tail end of your copy:
+
+🚀 INITIALIZE YOUR DIGITAL TRANSFORMATION:
+🌐 Corporate Website: https://www.sasafrik.com
+📞 Direct Office Hotline: +254 720 000 803
+💬 Connect Instantly via WhatsApp: Click this official routing link to launch a direct technical consultation with our engineering desk right now: https://wa.me/254720000803?text=Hello%20SasAfrik%2C%20I%20am%20interested%20in%20your%20software%20engineering%20services.
+
+Output ONLY the final post text. Do not introduce it with meta-comments.
 """
     try:
         return model.generate_content(prompt).text.strip()
     except Exception:
-        return f"Optimize your systems with our premium engineering options. Contact SasAfrik today. {topic}"
+        return "Optimize your systems with our premium engineering options. Visit www.sasafrik.com, call +254720000803, or chat directly on WhatsApp: https://wa.me/254720000803"
 
 def generate_twitter_ai_content(topic):
     if not model: 
-        return "Pioneering enterprise operations scaling from Nairobi to the global stage."
-    prompt = f"Write one concise, high-impact marketing tweet for X (max 190 characters) prompting users to check out our product capability stack listed on the infographic regarding: '{topic}'."
+        return "Pioneering enterprise operations scaling from Nairobi to the global stage. Visit sasafrik.com or chat on WhatsApp: https://wa.me/254720000803"
+    
+    # SHORT-FORM CALL TO ACTION LINKS
+    prompt = f"""
+Write one concise, high-impact marketing tweet for X (max 180 characters) regarding: '{topic}'.
+You MUST explicitly feature our website link (sasafrik.com) and our quick WhatsApp chat deep link (https://wa.me/254720000803) right inside the text.
+"""
     try:
         return model.generate_content(prompt).text.strip()
     except Exception:
-        return f"Driving world-class technical software development models across East Africa. {topic}"
+        return "Scale your tech systems! Visit sasafrik.com or click here to chat on WhatsApp instantly: https://wa.me/254720000803"
 
 # --- Orchestrated Execution Engine ---
 def run_orchestrated_pipeline():
@@ -430,7 +449,7 @@ def run_orchestrated_pipeline():
             return
 
         # 3. Composite brand layers using Pillow locally
-        if not composite_masterpiece(raw_canvas, "logo.png", final_canvas):
+        if not composite_masterpiece(raw_canvas, LOGO_ASSET_PATH, final_canvas):
             print("Composition Error: Graphic compositor failed to watermark assets. Ending cycle.")
             return
 
