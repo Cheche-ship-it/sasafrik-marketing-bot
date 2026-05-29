@@ -1,5 +1,6 @@
 # main.py
 import os
+import json
 import random
 import time
 import requests
@@ -57,6 +58,58 @@ except Exception as e:
 # Gemini API Key: Get this from Google AI Studio or Google Cloud Console.
 # It's crucial to keep this secure and not hardcode it in public repositories.
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Files for persistence and settings
+PROCESSED_FILE = os.getenv("PROCESSED_TOPICS_FILE", "processed_topics.json")
+SETTINGS_FILE = os.getenv("POST_SETTINGS_FILE", "post_settings.json")
+
+def load_settings():
+    default = {"restart": True}
+    try:
+        if os.path.exists(SETTINGS_FILE):
+            with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if "restart" not in data:
+                    data["restart"] = True
+                return data
+        else:
+            with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+                json.dump(default, f, indent=2)
+            return default
+    except Exception as e:
+        print(f"Error loading settings ({SETTINGS_FILE}): {e}")
+        return default
+
+def load_processed_topics():
+    try:
+        if os.path.exists(PROCESSED_FILE):
+            with open(PROCESSED_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return data
+        return []
+    except Exception as e:
+        print(f"Error loading processed topics ({PROCESSED_FILE}): {e}")
+        return []
+
+def save_processed_topics(topics_list):
+    try:
+        with open(PROCESSED_FILE, "w", encoding="utf-8") as f:
+            json.dump(list(topics_list), f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Error saving processed topics ({PROCESSED_FILE}): {e}")
+
+def add_processed_topic(topic):
+    topics = load_processed_topics()
+    if topic not in topics:
+        topics.append(topic)
+        save_processed_topics(topics)
+
+def clear_processed_topics():
+    try:
+        save_processed_topics([])
+    except Exception as e:
+        print(f"Error clearing processed topics: {e}")
 
 # Social Media API Credentials (PLACEHOLDERS - DO NOT USE IN PRODUCTION AS IS)
 # For Facebook:
@@ -527,29 +580,62 @@ def send_social_media_post():
     """
     print(f"\n--- Starting new social media post cycle at {time.ctime()} ---")
     
-    # 1. Randomly select a topic
-    selected_topic = random.choice(TOPICS)
-    print(f"Selected topic: {selected_topic}")
+    # Load settings and processed topics
+    settings = load_settings()
+    processed = set(load_processed_topics())
 
-    # 2. Fetch trending hashtags in Kenya
+    # Fetch trending hashtags in Kenya
     trending_hashtags = get_kenya_trends()
     print(f"Trending hashtags in Kenya: {trending_hashtags}")
 
-    # 3. Randomly decide to post with image or not 
-    # If IMAGE_URLS is empty, use_image will be False
-    # 75% chance to use an image if available
-    use_image = bool(IMAGE_URLS) and random.random() < 0.75
-    # use_image = True
+    # Prepare available topics (text) and image candidates (whose topic hasn't been posted yet)
+    available_text_topics = [t for t in TOPICS if t not in processed]
+    image_candidates = [img for img in IMAGE_URLS if img.get("topic") not in processed]
+
+    # If no topics remain, either restart or exit depending on settings
+    if not available_text_topics and not image_candidates:
+        if settings.get("restart", True):
+            print("All topics have been posted. Restarting processed list per settings.")
+            clear_processed_topics()
+            processed = set()
+            available_text_topics = [t for t in TOPICS if t not in processed]
+            image_candidates = [img for img in IMAGE_URLS if img.get("topic") not in processed]
+        else:
+            print("All topics have been posted and restart is disabled. Nothing to post.")
+            return
+
+    # Decide whether to use an image: prefer images with unposted topics
+    use_image = bool(image_candidates) and random.random() < 0.75
     image_path = None
     image_url = None
     image_topic = None
+    selected_topic = None
+    image_dict = None
     if use_image:
-        image_dict = random.choice(IMAGE_URLS)
+        image_dict = random.choice(image_candidates)
         image_url = image_dict["image_url"]
-        image_topic = image_dict["topic"]
+        image_topic = image_dict.get("topic")
+        selected_topic = image_topic
         print(f"Selected image URL: {image_url}")
         print(f"Image topic: {image_topic}")
         image_path = download_image(image_url, "temp_image.jpg")
+    else:
+        if not available_text_topics:
+            # fallback to image if any remain
+            if image_candidates:
+                image_dict = random.choice(image_candidates)
+                image_url = image_dict["image_url"]
+                image_topic = image_dict.get("topic")
+                selected_topic = image_topic
+                use_image = True
+                print(f"Falling back to image topic: {selected_topic}")
+                image_path = download_image(image_url, "temp_image.jpg")
+            else:
+                print("No available topics to select after restart check. Aborting.")
+                return
+        else:
+            selected_topic = random.choice(available_text_topics)
+            print(f"Selected topic: {selected_topic}")
     if use_image and image_path:
         # --- Image Validation ---
         valid_image = True
@@ -600,6 +686,13 @@ def send_social_media_post():
             # Twitter
             twitter_success = post_image_to_twitter(image_path, x_post_content_with_hashtags)
             print(f"Twitter image post success: {twitter_success}")
+            # Mark topic as processed if any post succeeded
+            try:
+                if selected_topic and (facebook_success or twitter_success):
+                    add_processed_topic(selected_topic)
+                    print(f"Marked topic as processed. Total processed: {len(load_processed_topics())}")
+            except Exception as e:
+                print(f"Error marking topic processed: {e}")
         # Clean up temp image
         try:
             os.remove(image_path)
@@ -622,6 +715,13 @@ def send_social_media_post():
         print(f"Twitter post content: {twitter_post_content_with_hashtags}")
         twitter_success = post_to_twitter(twitter_post_content_with_hashtags)
         print(f"Twitter post success: {twitter_success}")
+        # Mark topic as processed if any post succeeded
+        try:
+            if selected_topic and (facebook_success or twitter_success):
+                add_processed_topic(selected_topic)
+                print(f"Marked topic as processed. Total processed: {len(load_processed_topics())}")
+        except Exception as e:
+            print(f"Error marking topic processed: {e}")
     print("--- End of post cycle ---")
 
 # --- Main Execution Block ---
