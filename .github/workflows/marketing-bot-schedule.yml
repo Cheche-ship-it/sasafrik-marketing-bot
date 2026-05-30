@@ -2,8 +2,20 @@ name: Marketing Bot Schedule
 
 on:
   schedule:
-    - cron: '30 7 * * 1-5'  # 7:30 AM UTC, Monday-Friday
-  workflow_dispatch:  # Allow manual trigger for testing
+    # Trigger Facebook Reels Automation daily at 06:00 AM Kenyan Time (03:00 AM UTC)
+    - cron: '0 3 * * *'
+    # Trigger Standard Feed Image/Text Updates at 10:30 AM Kenyan Time (07:30 AM UTC)
+    - cron: '30 7 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      forced_mode:
+        description: 'Select manual execution mode Overwrite'
+        required: true
+        default: 'STANDARD_POST'
+        type: choice
+        options:
+          - STANDARD_POST
+          - REELS
 
 jobs:
   run-bot:
@@ -16,14 +28,31 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: '3.11'
+        cache: 'pip'
 
-    - name: Install dependencies
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg libsm6 libxext6
+
+    - name: Install Python Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install requests requests_oauthlib pillow beautifulsoup4 python-dotenv opencv-python google-generativeai
+
+    - name: Resolve Execution Mode
+      id: mode-resolver
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "EXECUTION_MODE=${{ github.event.inputs.forced_mode }}" >> $GITHUB_ENV
+        elif [ "${{ github.event.schedule }}" = "0 3 * * *" ]; then
+          echo "EXECUTION_MODE=REELS" >> $GITHUB_ENV
+        else
+          echo "EXECUTION_MODE=STANDARD_POST" >> $GITHUB_ENV
+        fi
 
     - name: Run the marketing bot
       run: python main.py
@@ -35,3 +64,12 @@ jobs:
         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
         TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+        EXECUTION_MODE: ${{ env.EXECUTION_MODE }}
+
+    - name: Commit and Push State Changes
+      run: |
+        git config --global user.name "SasAfrik Bot"
+        git config --global user.email "bot@sasafrik.com"
+        git add processed_topics.json processed_reels.json || true
+        git commit -m "chore: update automation history state [skip ci]" || true
+        git push || true
