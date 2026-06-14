@@ -6,11 +6,15 @@ import time
 import mimetypes
 import urllib.parse
 import requests
-import cv2
-import numpy as np
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from requests_oauthlib import OAuth1Session, OAuth1
+try:
+    from requests_oauthlib import OAuth1Session, OAuth1
+    TWITTER_LIB_AVAILABLE = True
+except Exception:
+    OAuth1Session = None
+    OAuth1 = None
+    TWITTER_LIB_AVAILABLE = False
 from PIL import Image, ImageDraw, ImageFont
 
 # Load environment variables
@@ -27,6 +31,7 @@ FLUX_BASE_URL = os.getenv("FLUX_BASE_URL", "https://image.pollinations.ai/p/")
 
 FACEBOOK_PAGE_ID = os.getenv("FACEBOOK_PAGE_ID", "YOUR_FACEBOOK_PAGE_ID")
 FACEBOOK_ACCESS_TOKEN = os.getenv("FACEBOOK_ACCESS_TOKEN", "YOUR_FACEBOOK_ACCESS_TOKEN")
+PAUSE_TWITTER = os.getenv("PAUSE_TWITTER", "false").lower()
 
 TWITTER_API_KEY = os.getenv("TWITTER_API_KEY", "YOUR_TWITTER_API_KEY")
 TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET", "YOUR_TWITTER_API_SECRET")
@@ -190,6 +195,13 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
             # Elegant Frame Accents
             draw.rectangle([50, 50, width - 50, height - 50], outline=(56, 189, 248, 25), width=3)
             draw.text((width // 2, 140), "SASAFRIK SOFTWARE CONSULTANCY", fill=(148, 163, 184), font=font_brand, anchor="mm")
+            # Render the reel title prominently under the brand header
+            try:
+                title_text = reels_dict.get("title", "")
+                if title_text:
+                    draw.text((width // 2, 200), title_text, fill=(236, 240, 241), font=font_brand, anchor="mm")
+            except Exception:
+                pass
             draw.text((width // 2, height - 140), "💬 wa.me/254720000803 | hello@sasafrik.com", fill=(148, 163, 184), font=font_brand, anchor="mm")
 
             y_cursor = y_cursor_start
@@ -207,9 +219,9 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
 
 # --- Facebook Reels Publishing API Engine ---
 def upload_reel_to_facebook_page(video_path, description):
-    if not FACEBOOK_PAGE_ID or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
+    if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith("YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
         print("Facebook credentials missing or default. Skipping live Reels upload step.")
-        return True
+        return False
 
     print("Publishing video container directly to Facebook Reels ecosystem...")
     init_url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/video_reels"
@@ -275,11 +287,23 @@ def call_flux_api_and_save(flux_prompt, filename="temp_flux_raw.jpg"):
     safe_prompt = urllib.parse.quote(flux_prompt)
     target_url = f"{FLUX_BASE_URL}{safe_prompt}?width=1024&height=1024&model=flux&seed={random.randint(1, 9999999)}"
     try:
+        print(f"Calling FLUX API: {target_url}")
         res = requests.get(target_url, timeout=45)
         if res.status_code == 200:
             with open(filename, 'wb') as f: f.write(res.content)
             return filename
-        return None
+        else:
+            print(f"Flux API returned status {res.status_code}: {res.text}")
+            # Fallback: use local logo as a placeholder if available so pipeline can continue
+            if os.path.exists(LOGO_ASSET_PATH):
+                try:
+                    from shutil import copyfile
+                    copyfile(LOGO_ASSET_PATH, filename)
+                    print(f"Using local logo fallback for image: {LOGO_ASSET_PATH}")
+                    return filename
+                except Exception:
+                    pass
+            return None
     except Exception: return None
 
 def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_filename="masterpiece_final.jpg"):
@@ -341,7 +365,9 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
         return None
 
 def post_image_to_facebook_page(image_path, message):
-    if not FACEBOOK_PAGE_ID or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN: return True
+    if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith("YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
+        print("Facebook credentials missing or default. Skipping image post to Facebook.")
+        return False
     url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/photos"
     try:
         with open(image_path, "rb") as img_file:
@@ -350,6 +376,12 @@ def post_image_to_facebook_page(image_path, message):
     except Exception: return False
 
 def post_image_to_twitter(image_path, message):
+    if PAUSE_TWITTER == 'true':
+        print("Twitter posting is currently paused via PAUSE_TWITTER. Skipping Twitter upload.")
+        return False
+    if not TWITTER_LIB_AVAILABLE:
+        print("Twitter client library 'requests_oauthlib' is not installed. Skipping Twitter upload.")
+        return False
     if not TWITTER_API_KEY or "YOUR_TWITTER" in TWITTER_API_KEY: return True
     try:
         upload_url = "https://upload.twitter.com/1.1/media/upload.json"
@@ -364,25 +396,40 @@ def post_image_to_twitter(image_path, message):
     except Exception: return False
 
 def generate_facebook_ai_content(topic):
-    if not model: return "Scale your custom digital ecosystem instantly. Chat live with our Nairobi engineering desk right now: https://wa.me/254720000803"
+    # Compact CTA to fit within the total character budget
+    cta = "Chat: https://wa.me/254720000803 Web: https://sasafrik.com"
+
+    def _trim_for_facebook(body, cta_text, max_len=155):
+        # Reserve 1 space between body and CTA
+        allowed = max_len - len(cta_text) - 1
+        if allowed <= 0:
+            # CTA itself exceeds budget; truncate CTA (rare)
+            return cta_text[:max_len]
+        if len(body) <= allowed:
+            return f"{body} {cta_text}"
+        # Truncate at word boundary
+        truncated = body[:allowed].rsplit(' ', 1)[0]
+        if not truncated:
+            truncated = body[:allowed]
+        return f"{truncated}… {cta_text}"
+
+    if not model:
+        body = "Scale your custom digital ecosystem instantly."
+        return _trim_for_facebook(body, cta)
+
+    # Ask the model to produce a concise body only (no CTA/signature)
     prompt = f"""
-You are an elite corporate copywriter for SasAfrik. 
-Write a deeply compelling, authoritative, long-form Facebook post designed to capture the attention of corporate founders, enterprise executives, and tech directors regarding: '{topic}'.
-
-Strict Copywriting Guidelines:
-1. Ignore all length or character limits entirely. Write a thorough, persuasive corporate case study and capability pitch. 
-2. Open with a highly strategic business hook detailing operational issues or revenue scaling realities across modern enterprise environments in East Africa.
-3. You MUST append this exact Call-To-Action signature block at the tail end of your copy:
-
-🚀 INITIALIZE YOUR DIGITAL TRANSFORMATION:
-🌐 Corporate Website: https://www.sasafrik.com
-📞 Direct Office Hotline: +254 720 000 803
-💬 Connect Instantly via WhatsApp: Click this official routing link to launch a direct technical consultation with our engineering desk right now: https://wa.me/254720000803?text=Hello%20SasAfrik%2C%20I%20am%20interested%20in%20your%20software%20engineering%20services.
-
-Output ONLY the final post copy text. No meta introductions.
+You are a senior corporate copywriter for SasAfrik.
+Write a concise, high-impact Facebook post body (single paragraph, no CTA) for corporate founders and tech leaders about: {topic}
+Keep the body short and focused — we will append a short CTA and enforce a 125-character limit overall.
+Output ONLY the post body text.
 """
-    try: return model.generate_content(prompt).text.strip()
-    except Exception: return "Optimize your enterprise platforms. Chat live with our desk: https://wa.me/254720000803"
+    try:
+        body = model.generate_content(prompt).text.strip()
+    except Exception:
+        body = "Optimize your enterprise platforms."
+
+    return _trim_for_facebook(body, cta)
 
 def generate_twitter_ai_content(topic):
     if not model: return "Scale your tech systems! Visit sasafrik.com or click here to chat on WhatsApp instantly: https://wa.me/254720000803"
@@ -411,9 +458,12 @@ def execute_reels_pipeline():
         return
 
     video_output = "reels_final_payload.mp4"
+    # Initialize summary so we always write an output file even on early returns
+    summary = {"mode": "REELS", "day": target_reel.get("day"), "title": target_reel.get("title"), "facebook_upload": False, "error": None}
     try:
         compiled_video = compile_reels_video_file(target_reel, video_output)
         if not compiled_video or not os.path.exists(compiled_video):
+            summary["error"] = "video_compile_failed"
             print("Video compiler failed to output video binary stream object.")
             return
 
@@ -423,8 +473,17 @@ def execute_reels_pipeline():
         if success:
             processed.append(target_reel["day"])
             save_processed_items(PROCESSED_REELS_FILE, processed)
+            summary["facebook_upload"] = True
             print(f"Successfully tracked Day {target_reel['day']} inside production databases.")
+    except Exception as e:
+        summary["error"] = str(e)
     finally:
+        # Emit summary regardless of early returns or errors
+        try:
+            with open("last_run_summary.json", "w", encoding="utf-8") as sf:
+                json.dump(summary, sf, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
         if os.path.exists(video_output):
             try: os.remove(video_output)
             except Exception: pass
@@ -443,22 +502,39 @@ def execute_standard_post_pipeline():
     selected_topic = random.choice(available)
     raw_canvas, final_canvas = "temp_flux_raw.jpg", "masterpiece_final.jpg"
     
+    # Prepare summary early so it's always written
+    summary = {"mode": "STANDARD_POST", "topic": selected_topic, "facebook_posted": False, "twitter_posted": False, "twitter_paused": (PAUSE_TWITTER == 'true'), "error": None}
     try:
         optimized_prompt = generate_flux_masterpiece_prompt(selected_topic)
-        if not call_flux_api_and_save(optimized_prompt, raw_canvas): return
-        if not composite_masterpiece(raw_canvas, LOGO_ASSET_PATH, final_canvas): return
+        if not call_flux_api_and_save(optimized_prompt, raw_canvas):
+            summary["error"] = "flux_api_failed"
+            return
+        if not composite_masterpiece(raw_canvas, LOGO_ASSET_PATH, final_canvas):
+            summary["error"] = "composite_failed"
+            return
 
         fb_text = generate_facebook_ai_content(selected_topic)
         x_text = generate_twitter_ai_content(selected_topic)
 
         fb_status = post_image_to_facebook_page(final_canvas, fb_text)
         x_status = post_image_to_twitter(final_canvas, x_text)
+        # Summary and processing logic
+        summary["facebook_posted"] = bool(fb_status)
+        summary["twitter_posted"] = bool(x_status)
 
         if fb_status or x_status:
             processed.add(selected_topic)
             save_processed_items(PROCESSED_FILE, list(processed))
             print("Standard post marked successfully in local history.")
+
+    except Exception as e:
+        summary["error"] = str(e)
     finally:
+        try:
+            with open("last_run_summary.json", "w", encoding="utf-8") as sf:
+                json.dump(summary, sf, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
         for path in [raw_canvas, final_canvas]:
             if os.path.exists(path):
                 try: os.remove(path)

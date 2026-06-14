@@ -1,22 +1,13 @@
-name: Marketing Bot (manual dispatch)
+name: Marketing Bot - Standard Posts (scheduled)
 
 on:
-  workflow_dispatch:
-    inputs:
-      forced_mode:
-        description: 'Select manual execution mode (override)'
-        required: true
-        default: 'STANDARD_POST'
-        type: choice
-        options:
-          - STANDARD_POST
-          - REELS
+  schedule:
+    # Trigger Standard Feed Image/Text Updates at 07:30 UTC (10:30 EAT) on weekdays
+    - cron: '30 7 * * 1-5'
 
 jobs:
-  run-bot:
+  run-standard:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Checkout code
@@ -38,20 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests requests_oauthlib pillow beautifulsoup4 python-dotenv opencv-python google-generativeai
 
-    - name: Resolve Execution Mode
-      id: mode-resolver
-      run: |
-        # For manual dispatch use the selected forced_mode
-        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-          echo "EXECUTION_MODE=${{ github.event.inputs.forced_mode }}" >> $GITHUB_ENV
-        else
-          echo "EXECUTION_MODE=STANDARD_POST" >> $GITHUB_ENV
-        fi
-
-    - name: Reveal resolved mode
-      run: echo "Resolved EXECUTION_MODE=$EXECUTION_MODE"
-
-    - name: Run the marketing bot
+    - name: Run Standard Post job
       run: python main.py
       env:
         FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
@@ -61,7 +39,7 @@ jobs:
         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
         TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
-        EXECUTION_MODE: ${{ env.EXECUTION_MODE }}
+        EXECUTION_MODE: STANDARD_POST
         PAUSE_TWITTER: 'true'
 
     - name: Commit and Push State Changes
