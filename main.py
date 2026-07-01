@@ -368,12 +368,39 @@ def post_image_to_facebook_page(image_path, message):
     if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith("YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
         print("Facebook credentials missing or default. Skipping image post to Facebook.")
         return False
-    url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/photos"
+
+    photo_url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/photos"
+    feed_url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/feed"
+
     try:
         with open(image_path, "rb") as img_file:
-            res = requests.post(url, data={"caption": message, "access_token": FACEBOOK_ACCESS_TOKEN}, files={"source": img_file}, timeout=25)
-        return res.status_code == 200
-    except Exception: return False
+            res = requests.post(
+                photo_url,
+                data={"caption": message, "access_token": FACEBOOK_ACCESS_TOKEN, "published": "true"},
+                files={"source": img_file},
+                timeout=25,
+            )
+        if res.status_code in [200, 201]:
+            return True
+
+        if "publish_actions" in res.text or "permission(s) publish_actions" in res.text:
+            print("Facebook publishing failed because the token is not a valid Page publishing token. Generate a Page access token with pages_manage_posts and pages_read_engagement in Meta Graph Explorer.")
+        else:
+            print(f"Facebook photo post failed with status {res.status_code}: {res.text}")
+
+        # Fallback: try the newer feed endpoint with a plain message payload.
+        feed_res = requests.post(
+            feed_url,
+            data={"message": message, "access_token": FACEBOOK_ACCESS_TOKEN, "published": "true"},
+            timeout=25,
+        )
+        if feed_res.status_code in [200, 201]:
+            return True
+        print(f"Facebook feed post failed with status {feed_res.status_code}: {feed_res.text}")
+        return False
+    except Exception as e:
+        print(f"Facebook post exception: {e}")
+        return False
 
 def post_image_to_twitter(image_path, message):
     if PAUSE_TWITTER == 'true':
