@@ -462,7 +462,7 @@ def generate_facebook_ai_content(topic):
     prompt = f"""
 You are a senior corporate copywriter for SasAfrik.
 Write a concise, high-impact Facebook post body (single paragraph, no CTA) for corporate founders and tech leaders about: {topic}
-Keep the body short and focused — we will append a short CTA and enforce a 125-character limit overall.
+Keep the body short and focused — we will append a short CTA and enforce a 700-character limit overall.
 Output ONLY the post body text.
 """
     try:
