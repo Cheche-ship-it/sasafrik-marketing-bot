@@ -35,7 +35,7 @@ jobs:
     - name: Install Python Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests requests_oauthlib pillow beautifulsoup4 python-dotenv opencv-python google-generativeai
+        pip install requests requests_oauthlib pillow beautifulsoup4 python-dotenv opencv-python google-genai
 
     - name: Run Reels job
       run: python main.py
