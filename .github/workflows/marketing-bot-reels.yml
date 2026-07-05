@@ -5,6 +5,11 @@ on:
     # Trigger Facebook Reels Automation daily at 03:00 UTC (06:00 EAT)
     - cron: '0 3 * * *'
 
+# Grant the job the minimal permissions required to commit state files back to the repo
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   run-reels:
     runs-on: ubuntu-latest
@@ -12,6 +17,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        persist-credentials: true
 
     - name: Set up Python
       uses: actions/setup-python@v5
