@@ -17,6 +17,15 @@ except Exception:
     TWITTER_LIB_AVAILABLE = False
 from PIL import Image, ImageDraw, ImageFont
 
+try:
+    import cv2
+    import numpy as np
+    REELS_LIBS_AVAILABLE = True
+except Exception:
+    cv2 = None
+    np = None
+    REELS_LIBS_AVAILABLE = False
+
 # Load environment variables
 load_dotenv()
 
@@ -124,6 +133,9 @@ def save_processed_items(filepath, item_list):
 # --- 100% Free Local Dynamic Video Reels Rendering Engine ---
 def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
     print(f"Compiling Kinetic Video Reel locally (100% Free) for: {reels_dict['title']}")
+    if not REELS_LIBS_AVAILABLE:
+        print("Required libs for REELS (opencv-python, numpy) are missing. Install them to enable reel compilation.")
+        return None
     width, height = 1080, 1920
     fps = 24
     
@@ -409,7 +421,9 @@ def post_image_to_twitter(image_path, message):
     if not TWITTER_LIB_AVAILABLE:
         print("Twitter client library 'requests_oauthlib' is not installed. Skipping Twitter upload.")
         return False
-    if not TWITTER_API_KEY or "YOUR_TWITTER" in TWITTER_API_KEY: return True
+    if not TWITTER_API_KEY or "YOUR_TWITTER" in TWITTER_API_KEY:
+        print("Twitter API credentials missing or default. Skipping Twitter upload.")
+        return False
     try:
         upload_url = "https://upload.twitter.com/1.1/media/upload.json"
         auth = OAuth1(TWITTER_API_KEY, TWITTER_API_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
