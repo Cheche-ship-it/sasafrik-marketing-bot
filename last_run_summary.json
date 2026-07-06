@@ -1,8 +1,7 @@
 {
-  "mode": "STANDARD_POST",
-  "topic": "Write a post targeting African enterprise CEOs explaining how SasAfrik's custom Software Engineering turns basic web portals into highly lucrative transactional sales engines.",
-  "facebook_posted": true,
-  "twitter_posted": false,
-  "twitter_paused": false,
+  "mode": "REELS",
+  "day": 3,
+  "title": "MVP Journey to Millions",
+  "facebook_upload": true,
   "error": null
 }
