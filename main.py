@@ -1137,7 +1137,7 @@ def execute_standard_post_pipeline():
 
 
 # [ANTI-DETECTION] Human-like Execution Jitter Setup
-def apply_execution_jitter(min_mins=5, max_mins=25):
+def apply_execution_jitter(min_mins=5, max_mins=45):
     """Introduces a randomized sleep cycle right before execution loops trigger."""
     jitter_seconds = random.randint(min_mins * 60, max_mins * 60)
     print(f"🕒 [Anti-Detection] Injecting {jitter_seconds // 60} minutes of random timing jitter...")
