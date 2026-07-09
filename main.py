@@ -1145,7 +1145,7 @@ def apply_execution_jitter(min_mins=5, max_mins=25):
 
 
 if __name__ == "__main__":
-    apply_execution_jitter(0, 1)
+    apply_execution_jitter(5, 45)
 
     mode = os.getenv("EXECUTION_MODE", "STANDARD_POST").upper()
     if mode == "REELS":
