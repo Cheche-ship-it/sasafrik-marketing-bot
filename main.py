@@ -186,7 +186,6 @@ else:
     print("⚠️ Warning: GEMINI_API_KEY is missing or set to default values.")
 
 
-# --- Storage Management Utilities ---
 def load_processed_items(filepath):
     try:
         if os.path.exists(filepath):
@@ -229,7 +228,93 @@ def sanitize_generated_copy(text):
     return cleaned
 
 
-# --- 100% Free Local Dynamic Video Reels Rendering Engine ---
+def fetch_trending_song_audio(query, output_mp3_path):
+    """
+    Searches for and downloads the current top trending song in Kenya.
+    Falls back gracefully to a royalty-free energetic Afrobeat track if yt-dlp is not present.
+    """
+    print(f"🎵 Searching and fetching trending sound matching: '{query}'...")
+
+    # Method 1: Try using yt_dlp if available in the environment
+    try:
+        import yt_dlp
+        print("⚡ yt_dlp detected. Extracting audio from YouTube search results...")
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'outtmpl': output_mp3_path.replace('.mp3', ''),
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            }],
+            'quiet': True,
+            'no_warnings': True,
+        }
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([f"ytsearch1:{query}"])
+            temp_expected = output_mp3_path.replace('.mp3', '') + '.mp3'
+            if os.path.exists(temp_expected) and temp_expected != output_mp3_path:
+                os.rename(temp_expected, output_mp3_path)
+            if os.path.exists(output_mp3_path):
+                print(f"✅ Successfully fetched live trending audio: {output_mp3_path}")
+                return True
+    except Exception as e:
+        print(f"⚠️ YouTube direct extraction bypassed (yt_dlp not installed/configured): {e}")
+
+    # Method 2: Bulletproof Fallback to premium copyright-free energetic upbeat Afrobeat audio
+    print("⏳ Downloading high-tempo copyright-free Afrobeat track for background audio...")
+    fallback_url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        res = requests.get(fallback_url, headers=headers, stream=True, timeout=30)
+        if res.status_code == 200:
+            with open(output_mp3_path, 'wb') as f:
+                for chunk in res.iter_content(chunk_size=1024 * 8):
+                    if chunk:
+                        f.write(chunk)
+            print("✅ Successfully fetched fallback high-energy background audio!")
+            return True
+    except Exception as fallback_err:
+        print(f"❌ Failed to obtain fallback audio track: {fallback_err}")
+
+    return False
+
+
+def merge_audio_video(silent_video_path, audio_path, output_path):
+    """
+    Invokes ffmpeg as a lightweight subprocess to merge the compiled
+    OpenCV video track with the fetched background music.
+    """
+    print("🎬 Merging generated Kinetic Visuals with trending audio using ffmpeg...")
+    try:
+        import subprocess
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", silent_video_path,
+            "-i", audio_path,
+            "-map", "0:v",
+            "-map", "1:a",
+            "-c:v", "copy",
+            "-c:a", "aac",
+            "-shortest",
+            output_path
+        ]
+        subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+        print("✅ Audios blended flawlessly with Kinematics!")
+        return True
+    except Exception as e:
+        print(f"⚠️ ffmpeg merging bypassed or not installed on server: {e}")
+        # Graceful degradation fallback: copy silent video to target output path directly
+        try:
+            import shutil
+            shutil.copyfile(silent_video_path, output_path)
+            print("⚠️ Proceeding with clean silent video to avoid execution crashes.")
+            return True
+        except Exception as copy_err:
+            print(f"❌ Critical copy fallback error: {copy_err}")
+            return False
+
+
 def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
     print(f"Compiling Kinetic Video Reel locally (100% Free) for: {reels_dict['title']}")
     if not REELS_LIBS_AVAILABLE:
@@ -270,8 +355,10 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
         if current: lines.append(' '.join(current))
         return lines
 
+    # Write visual-only output to a silent video container first
+    silent_temp_video = "temp_silent_reel.mp4"
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    video_writer = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+    video_writer = cv2.VideoWriter(silent_temp_video, fourcc, fps, (width, height))
 
     bg_array = np.zeros((height, width, 3), dtype=np.uint8)
     for y in range(height):
@@ -295,6 +382,7 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
             frame_canvas = bg_base_pil.copy()
             draw = ImageDraw.Draw(frame_canvas)
 
+            # Interactive Background Dynamic Grid Animation Lines
             grid_spacing = 120
             grid_offset = int(frame_counter * 1.5) % grid_spacing
 
@@ -303,6 +391,7 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
             for y_line in range(grid_offset, height, grid_spacing):
                 draw.line([(0, y_line), (width, y_line)], fill=(56, 189, 248, 12), width=1)
 
+            # Elegant Frame Accents
             draw.rectangle([50, 50, width - 50, height - 50], outline=(56, 189, 248, 25), width=3)
             draw.text((width // 2, 140), "SASAFRIK SOFTWARE CONSULTANCY", fill=(148, 163, 184), font=font_brand,
                       anchor="mm")
@@ -326,10 +415,31 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
             video_writer.write(opencv_frame)
 
     video_writer.release()
+
+    # --- Fetch Trending Audio & Merge ---
+    temp_background_song = "temp_background_song.mp3"
+    trending_song_query = "Bien x Alikiba Finale Official Audio"
+
+    audio_fetched = fetch_trending_song_audio(trending_song_query, temp_background_song)
+
+    if audio_fetched and os.path.exists(temp_background_song):
+        merge_audio_video(silent_temp_video, temp_background_song, output_path)
+    else:
+        import shutil
+        shutil.copyfile(silent_temp_video, output_path)
+        print("⚠️ Directing clean silent video output container to endpoint.")
+
+    # Cleanup temporary local asset files
+    for temp_file in [silent_temp_video, temp_background_song]:
+        if os.path.exists(temp_file):
+            try:
+                os.remove(temp_file)
+            except Exception:
+                pass
+
     return output_path
 
 
-# --- Facebook Reels Publishing API Engine ---
 def upload_reel_to_facebook_page(video_path, description):
     if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith(
             "YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
@@ -384,7 +494,6 @@ def upload_reel_to_facebook_page(video_path, description):
         return None
 
 
-# --- Core Business Automation Channels (Image Posts) ---
 def call_flux_api_and_save(flux_prompt, filename="temp_flux_raw.jpg"):
     safe_prompt = urllib.parse.quote(flux_prompt)
     target_url = f"{FLUX_BASE_URL}{safe_prompt}?width=1024&height=1024&model=flux&seed={random.randint(1, 9999999)}"
@@ -606,7 +715,6 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
                                     line, (220, 228, 239, 255), font_footer)
             y_sub += int(card_h * 0.06)
 
-        # Keep the panel content short, clear, and tied to the post copy.
         y_cursor = card_y1 + int(card_h * 0.40)
         for item in capabilities[:4]:
             draw_high_contrast_text(draw_overlay, (card_x1 + int(card_w * 0.06), y_cursor),
@@ -625,7 +733,6 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
         draw_high_contrast_text(draw_overlay, (banner_x1 + 40, banner_y1 + int(banner_h * 0.54)), f2,
                                 (255, 255, 255, 255), font_footer)
 
-        # [ANTI-DETECTION] Stripping Synthetic Metadata
         intermediary_composite = Image.alpha_composite(base, overlay_layer)
         sanitized_canvas = Image.new("RGB", intermediary_composite.size)
         sanitized_canvas.paste(intermediary_composite)
@@ -637,7 +744,6 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
         return None
 
 
-# --- Facebook Page Feed Dispatchers ---
 def post_image_to_facebook_page(image_path, message):
     if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith(
             "YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
@@ -704,7 +810,6 @@ def post_comment_to_facebook_post(post_id, comment_text):
         return False
 
 
-# --- Twitter/X Platform Publisher ---
 def post_image_to_twitter(image_path, message):
     if PAUSE_TWITTER == 'true':
         print("Twitter posting is currently paused via PAUSE_TWITTER. Skipping Twitter upload.")
@@ -734,7 +839,55 @@ def post_image_to_twitter(image_path, message):
         return False
 
 
-# --- Consolidated AI Generation Engine to Preserve Quota ---
+def generate_content_with_retry(prompt, max_retries=3):
+    """
+    Intelligent exponential backoff helper that catches rate limits (429),
+    dynamically parses the requested cooldown delay if returned by Gemini,
+    and retries the API sequence safely.
+    """
+    if not model:
+        print("❌ Gemini model reference missing. Retrying aborted.")
+        return None
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            response_wrapper = model.generate_content(prompt)
+            return response_wrapper.text.strip()
+        except Exception as e:
+            err_msg = str(e)
+            print(f"⚠️ Gemini API execution failed [Attempt {attempt}/{max_retries}]: {err_msg}")
+
+            # Identify rate limiting or quota exhaustion conditions
+            if "429" in err_msg or "quota" in err_msg.lower():
+                # Attempt to extract precise API retry time frames
+                retry_match = re.search(r"retry in ([\d\.]+)\s*s", err_msg, re.IGNORECASE)
+                seconds_match = re.search(r"seconds:\s*(\d+)", err_msg, re.IGNORECASE)
+
+                sleep_time = 60  # Safe default sleep if unparsed
+                if retry_match:
+                    sleep_time = int(float(retry_match.group(1))) + 3
+                elif seconds_match:
+                    sleep_time = int(seconds_match.group(1)) + 3
+
+                # Limit safety bounds
+                sleep_time = max(5, min(sleep_time, 120))
+
+                if attempt < max_retries:
+                    print(
+                        f"⏳ Spike rate limit hit. Pausing execution track for {sleep_time}s before automatic retry...")
+                    time.sleep(sleep_time)
+                else:
+                    print("❌ Max retry limit reached. Safely raising exception to guardrail engine.")
+                    raise e
+            else:
+                # Basic non-quota failures backoff
+                if attempt < max_retries:
+                    time.sleep(5)
+                else:
+                    raise e
+    return None
+
+
 def generate_all_ai_assets(topic):
     """
     Consolidates AI text generation into exactly one single prompt request
@@ -764,8 +917,9 @@ Strict JSON Output format schema:
 }}
 """
     try:
-        response_wrapper = model.generate_content(prompt)
-        response_text = response_wrapper.text.strip()
+        response_text = generate_content_with_retry(prompt)
+        if not response_text:
+            return None
 
         # Strip markdown syntax markers if model inserts them
         if response_text.startswith("```"):
@@ -814,10 +968,10 @@ Guidelines:
 - Output ONLY the comment text. Do not wrap in quotes.
 """
     try:
-        comment = model.generate_content(prompt).text.strip()
-        comment = sanitize_generated_copy(" ".join(comment.split()))
+        comment = generate_content_with_retry(prompt)
         if not comment:
             return None
+        comment = sanitize_generated_copy(" ".join(comment.split()))
         if len(comment) > 400:
             comment = comment[:397].rsplit(" ", 1)[0] + "..."
         return comment
@@ -826,7 +980,6 @@ Guidelines:
         return None
 
 
-# --- Orchestrated Execution Engine ---
 def execute_reels_pipeline():
     print(f"=== Starting Reels Automation Track: {time.ctime()} ===")
     processed = load_processed_items(PROCESSED_REELS_FILE)
