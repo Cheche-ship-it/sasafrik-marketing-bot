@@ -1,7 +1,10 @@
 {
-  "mode": "REELS",
-  "day": 5,
-  "title": "The Mobile First Empire",
-  "facebook_upload": true,
+  "mode": "STANDARD_POST",
+  "topic": "Write about high-yield Systems Integration bridging real-time M-Pesa B2B channels, custom accounting platforms, and local warehouse inventory layers.",
+  "facebook_posted": true,
+  "facebook_comment_posted": true,
+  "facebook_comment_text": "Can this integration help reduce manual data entry across M-Pesa, accounting, & inventory?",
+  "twitter_posted": false,
+  "twitter_paused": false,
   "error": null
 }

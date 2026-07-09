@@ -379,7 +379,7 @@ def composite_masterpiece(base_image_path, logo_path=LOGO_ASSET_PATH, output_fil
 def post_image_to_facebook_page(image_path, message):
     if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith("YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
         print("Facebook credentials missing or default. Skipping image post to Facebook.")
-        return False
+        return None
 
     photo_url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/photos"
     feed_url = f"https://graph.facebook.com/v24.0/{FACEBOOK_PAGE_ID}/feed"
@@ -393,7 +393,11 @@ def post_image_to_facebook_page(image_path, message):
                 timeout=25,
             )
         if res.status_code in [200, 201]:
-            return True
+            try:
+                payload = res.json()
+            except Exception:
+                payload = {}
+            return payload.get("post_id") or payload.get("id")
 
         if "publish_actions" in res.text or "permission(s) publish_actions" in res.text:
             print("Facebook publishing failed because the token is not a valid Page publishing token. Generate a Page access token with pages_manage_posts and pages_read_engagement in Meta Graph Explorer.")
@@ -407,11 +411,70 @@ def post_image_to_facebook_page(image_path, message):
             timeout=25,
         )
         if feed_res.status_code in [200, 201]:
-            return True
+            try:
+                payload = feed_res.json()
+            except Exception:
+                payload = {}
+            return payload.get("id") or payload.get("post_id")
         print(f"Facebook feed post failed with status {feed_res.status_code}: {feed_res.text}")
-        return False
+        return None
     except Exception as e:
         print(f"Facebook post exception: {e}")
+        return None
+
+def generate_facebook_comment(topic, post_caption):
+    if not model:
+        fallback = "This post adds more context on how SasAfrik helps businesses turn ideas into practical digital systems."
+        return fallback
+
+    prompt = f"""
+You are writing a Facebook comment for SasAfrik.
+Context topic: {topic}
+Post caption: {post_caption}
+
+Write exactly one short, natural Facebook comment that adds more detail about the post.
+Explain the benefit, angle, or practical implication of the post.
+Do not ask a question.
+Do not include hashtags, emojis, or CTA language.
+Keep it under 220 characters.
+Output only the comment text.
+"""
+    try:
+        comment = model.generate_content(prompt).text.strip()
+    except Exception:
+        comment = "This post adds more context on how SasAfrik helps businesses turn ideas into practical digital systems."
+
+    comment = " ".join(comment.split())
+    if not comment:
+        comment = "This post adds more context on how SasAfrik helps businesses turn ideas into practical digital systems."
+    comment = comment.replace("?", ".")
+    if len(comment) > 220:
+        comment = comment[:217].rsplit(" ", 1)[0] + "..."
+    if not comment.endswith((".", "!", "...")):
+        comment += "."
+    return comment
+
+def post_comment_to_facebook_post(post_id, comment_text):
+    if not post_id:
+        print("No Facebook post ID returned. Skipping comment step.")
+        return False
+    if not FACEBOOK_PAGE_ID or not FACEBOOK_ACCESS_TOKEN or FACEBOOK_ACCESS_TOKEN.startswith("YOUR_") or "YOUR_FACEBOOK" in FACEBOOK_ACCESS_TOKEN:
+        print("Facebook credentials missing or default. Skipping comment post to Facebook.")
+        return False
+
+    comment_url = f"https://graph.facebook.com/v24.0/{post_id}/comments"
+    try:
+        res = requests.post(
+            comment_url,
+            data={"message": comment_text, "access_token": FACEBOOK_ACCESS_TOKEN},
+            timeout=25,
+        )
+        if res.status_code in [200, 201]:
+            return True
+        print(f"Facebook comment post failed with status {res.status_code}: {res.text}")
+        return False
+    except Exception as e:
+        print(f"Facebook comment exception: {e}")
         return False
 
 def post_image_to_twitter(image_path, message):
@@ -544,7 +607,16 @@ def execute_standard_post_pipeline():
     raw_canvas, final_canvas = "temp_flux_raw.jpg", "masterpiece_final.jpg"
     
     # Prepare summary early so it's always written
-    summary = {"mode": "STANDARD_POST", "topic": selected_topic, "facebook_posted": False, "twitter_posted": False, "twitter_paused": (PAUSE_TWITTER == 'true'), "error": None}
+    summary = {
+        "mode": "STANDARD_POST",
+        "topic": selected_topic,
+        "facebook_posted": False,
+        "facebook_comment_posted": False,
+        "facebook_comment_text": None,
+        "twitter_posted": False,
+        "twitter_paused": (PAUSE_TWITTER == 'true'),
+        "error": None,
+    }
     try:
         optimized_prompt = generate_flux_masterpiece_prompt(selected_topic)
         if not call_flux_api_and_save(optimized_prompt, raw_canvas):
@@ -557,13 +629,19 @@ def execute_standard_post_pipeline():
         fb_text = generate_facebook_ai_content(selected_topic)
         x_text = generate_twitter_ai_content(selected_topic)
 
-        fb_status = post_image_to_facebook_page(final_canvas, fb_text)
+        fb_post_id = post_image_to_facebook_page(final_canvas, fb_text)
         x_status = post_image_to_twitter(final_canvas, x_text)
         # Summary and processing logic
-        summary["facebook_posted"] = bool(fb_status)
+        summary["facebook_posted"] = bool(fb_post_id)
         summary["twitter_posted"] = bool(x_status)
 
-        if fb_status or x_status:
+        if fb_post_id:
+            fb_comment = generate_facebook_comment(selected_topic, fb_text)
+            comment_status = post_comment_to_facebook_post(fb_post_id, fb_comment)
+            summary["facebook_comment_posted"] = bool(comment_status)
+            summary["facebook_comment_text"] = fb_comment
+
+        if fb_post_id or x_status:
             processed.add(selected_topic)
             save_processed_items(PROCESSED_FILE, list(processed))
             print("Standard post marked successfully in local history.")
