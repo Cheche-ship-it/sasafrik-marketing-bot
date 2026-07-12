@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Unlocking a million users isn't just about tech; it's about relentless user problem discovery *before* drafting those architectural blueprints. A solid MVP validates your path, minimizing costly pivots later. 🤔 What's one critical user insight that fundamentally reshaped your product's journey to massive scale?",
+  "facebook_comment_text": "💡 It's not just about cutting steps, but intelligently *prioritizing* data capture. Many teams add fields for \"future insights\" that sabotage immediate conversions. Consider the engineering effort for graceful data collection post-conversion. How do you internally advocate for UX simplicity when other departments demand more data upfront?",
   "error": null
 }
