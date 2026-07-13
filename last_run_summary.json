@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 It's not just about cutting steps, but intelligently *prioritizing* data capture. Many teams add fields for \"future insights\" that sabotage immediate conversions. Consider the engineering effort for graceful data collection post-conversion. How do you internally advocate for UX simplicity when other departments demand more data upfront?",
+  "facebook_comment_text": "Moving beyond desktop means rethinking data integrity for intermittent connectivity. 💡 Offline-first isn't just about 'working without internet,' it's about ensuring data consistency and a fluid user experience even when signals drop. How are you tackling potential data conflicts or sync delays when your mobile users go offline?",
   "error": null
 }
