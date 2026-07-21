@@ -3,7 +3,6 @@ import os
 import json
 import random
 import time
-import schedule
 import mimetypes
 import re
 import textwrap
@@ -1203,6 +1202,7 @@ def run_scheduler():
     Reels: 06:00 AM & 04:30 PM
     Standard Post: 06:05 AM
     """
+    import schedule
     print("🚀 SasAfrik Automation Scheduler Initialized...")
     print("📅 Target Schedule:")
     print("   - 06:00 AM: Reel Post #1")

@@ -28,7 +28,7 @@ jobs:
     - name: Install Python Package Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pillow beautifulsoup4 google-generativeai python-dotenv requests-oauthlib opencv-python numpy yt-dlp
+        pip install -r requirements.txt
 
     - name: Run Standard Post job
       run: python main.py
