@@ -3,6 +3,7 @@ import os
 import json
 import random
 import time
+import schedule
 import mimetypes
 import re
 import textwrap
@@ -251,7 +252,15 @@ def fetch_trending_song_audio(query, output_mp3_path):
             'no_warnings': True,
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([f"ytsearch1:{query}"])
+            # Search for top 5 results and pick one randomly for variety
+            info = ydl.extract_info(f"ytsearch5:{query}", download=False)
+            if 'entries' in info and info['entries']:
+                selection = random.choice(info['entries'])
+                print(f"🎲 Selected for variety: {selection.get('title')}")
+                ydl.download([selection['webpage_url']])
+            else:
+                ydl.download([f"ytsearch1:{query}"])
+
             temp_expected = output_mp3_path.replace('.mp3', '') + '.mp3'
             if os.path.exists(temp_expected) and temp_expected != output_mp3_path:
                 os.rename(temp_expected, output_mp3_path)
@@ -263,7 +272,14 @@ def fetch_trending_song_audio(query, output_mp3_path):
 
     # Method 2: Bulletproof Fallback to premium copyright-free energetic upbeat Afrobeat audio
     print("⏳ Downloading high-tempo copyright-free Afrobeat track for background audio...")
-    fallback_url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    fallbacks = [
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
+    ]
+    fallback_url = random.choice(fallbacks)
     try:
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
         res = requests.get(fallback_url, headers=headers, stream=True, timeout=30)
@@ -315,7 +331,7 @@ def merge_audio_video(silent_video_path, audio_path, output_path):
             return False
 
 
-def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
+def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4", music_query=None):
     print(f"Compiling Kinetic Video Reel locally (100% Free) for: {reels_dict['title']}")
     if not REELS_LIBS_AVAILABLE:
         print("Required libs for REELS (opencv-python, numpy) are missing. Install them to enable reel compilation.")
@@ -418,7 +434,7 @@ def compile_reels_video_file(reels_dict, output_path="temp_reel.mp4"):
 
     # --- Fetch Trending Audio & Merge ---
     temp_background_song = "temp_background_song.mp3"
-    trending_song_query = "Bien x Alikiba Finale Official Audio"
+    trending_song_query = music_query or "Bien x Alikiba Finale Official Audio"
 
     audio_fetched = fetch_trending_song_audio(trending_song_query, temp_background_song)
 
@@ -980,6 +996,41 @@ Guidelines:
         return None
 
 
+def generate_reels_music_query(reels_dict):
+    """
+    Generates a dynamic trending music query based on the reel's vibe.
+    Drops the reliance on a single hardcoded track.
+    """
+    day = reels_dict.get('day', 1)
+    topic = reels_dict.get('title', 'Business Growth')
+
+    if not model:
+        return f"trending Afrobeat {topic}"
+
+    prompt = f"""
+Suggest a list of 5 currently trending and high-energy Afrobeat or Kenyan pop songs (Artist and Title) that perfectly match the mood of this video topic.
+Topic Title: {topic}
+Hook: {reels_dict.get('hook', 'Success')}
+Content Day: {day}
+
+We need high variety for a 30-day series. Do not repeat previous suggestions.
+Output ONLY the list of 5 songs separated by semicolons. Do not include any other text, quotes, or markdown.
+Example: Artist 1 - Song 1; Artist 2 - Song 2; Artist 3 - Song 3; Artist 4 - Song 4; Artist 5 - Song 5
+"""
+    try:
+        response = generate_content_with_retry(prompt)
+        if response:
+            # Parse the semicolon-separated list and pick one at random
+            options = [s.strip().strip('"').strip("'") for s in response.split(';') if s.strip()]
+            if options:
+                selection = random.choice(options)
+                print(f"🎵 Gemini suggested {len(options)} tracks. Selected: {selection}")
+                return selection
+    except Exception:
+        pass
+    return f"trending Afrobeat {topic}"
+
+
 def execute_reels_pipeline():
     print(f"=== Starting Reels Automation Track: {time.ctime()} ===")
     processed = load_processed_items(PROCESSED_REELS_FILE)
@@ -1003,7 +1054,9 @@ def execute_reels_pipeline():
     summary = {"mode": "REELS", "day": target_reel.get("day"), "title": target_reel.get("title"),
                "facebook_upload": False, "facebook_comment_posted": False, "facebook_comment_text": None, "error": None}
     try:
-        compiled_video = compile_reels_video_file(target_reel, video_output)
+        # [DYNAMIC MUSIC] Generate query based on reel content
+        music_query = generate_reels_music_query(target_reel)
+        compiled_video = compile_reels_video_file(target_reel, video_output, music_query=music_query)
         if not compiled_video or not os.path.exists(compiled_video):
             summary["error"] = "video_compile_failed"
             print("Video compiler failed to output video binary stream object.")
@@ -1144,11 +1197,48 @@ def apply_execution_jitter(min_mins=5, max_mins=45):
     time.sleep(jitter_seconds)
 
 
-if __name__ == "__main__":
-    apply_execution_jitter(5, 45)
+def run_scheduler():
+    """
+    Main background scheduler loop.
+    Reels: 06:00 AM & 04:30 PM
+    Standard Post: 06:05 AM
+    """
+    print("🚀 SasAfrik Automation Scheduler Initialized...")
+    print("📅 Target Schedule:")
+    print("   - 06:00 AM: Reel Post #1")
+    print("   - 06:05 AM: Standard Feed Post")
+    print("   - 04:30 PM: Reel Post #2")
 
-    mode = os.getenv("EXECUTION_MODE", "STANDARD_POST").upper()
-    if mode == "REELS":
+    def job_reels():
+        print(f"⏰ [{time.ctime()}] Triggering Scheduled REELS Pipeline...")
+        apply_execution_jitter(2, 10)  # Moderate jitter for scheduled slots
+        execute_reels_pipeline()
+
+    def job_standard():
+        print(f"⏰ [{time.ctime()}] Triggering Scheduled STANDARD POST Pipeline...")
+        apply_execution_jitter(2, 10)
+        execute_standard_post_pipeline()
+
+    # Define the daily schedule
+    schedule.every().day.at("06:00").do(job_reels)
+    schedule.every().day.at("06:05").do(job_standard)
+    schedule.every().day.at("16:30").do(job_reels)
+
+    print(f"✅ Scheduler is live. Next job scheduled for: {schedule.next_run()}")
+    while True:
+        schedule.run_pending()
+        time.sleep(30)
+
+
+if __name__ == "__main__":
+    mode = os.getenv("EXECUTION_MODE", "SCHEDULER").upper()
+
+    if mode == "SCHEDULER":
+        run_scheduler()
+    elif mode == "REELS":
+        apply_execution_jitter(5, 45)
         execute_reels_pipeline()
     else:
+        # Standard post or direct trigger
+        apply_execution_jitter(5, 45)
         execute_standard_post_pipeline()
