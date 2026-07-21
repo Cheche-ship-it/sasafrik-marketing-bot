@@ -2,8 +2,8 @@ name: Marketing Bot - Standard Posts (scheduled)
 
 on:
   schedule:
-    # Trigger Standard Feed Image/Text Updates at 07:30 UTC (10:30 EAT) on weekdays
-    - cron: '30 7 * * 1-5'
+    # Trigger Standard Feed Image/Text Updates daily at 06:05 AM EAT (03:05 UTC)
+    - cron: '5 3 * * *'
 
 jobs:
   run-standard:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.12'
         cache: 'pip'
 
     - name: Install System Dependencies (ffmpeg)

@@ -2,8 +2,9 @@ name: Marketing Bot - Reels (scheduled)
 
 on:
   schedule:
-    # Trigger Facebook Reels Automation daily at 03:00 UTC (06:00 EAT)
+    # Trigger Facebook Reels Automation daily at 06:00 AM EAT (03:00 UTC) and 04:30 PM EAT (13:30 UTC)
     - cron: '0 3 * * *'
+    - cron: '30 13 * * *'
 
 # Grant the job the minimal permissions required to commit state files back to the repo
 permissions:
@@ -24,7 +25,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.12'
         cache: 'pip'
 
     - name: Install System Dependencies (ffmpeg)
