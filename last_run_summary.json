@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling to zero is brilliant for cost, but the real engineering challenge is mastering 'cold start' latency without impacting user experience. It demands robust observability and event-driven patterns. 🤔 How have you balanced aggressive cost-saving with maintaining instant responsiveness in your autoscaling setups?",
+  "facebook_comment_text": "💡 Many focus solely on data backups, but true resilience requires rigorous, end-to-end recovery drills testing configurations, dependencies, and application services. A database wipe is just one part of potential chaos. 🤔 What critical component or workflow did your team most surprisingly overlook in a full disaster recovery simulation?",
   "error": null
 }
