@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Migrating a monolith isn't a big bang rewrite; it's often a strategic dance using patterns like the Strangler Fig. Gradually peeling off services minimizes risk and keeps the lights on while transforming. 💡 What's your go-to strategy for phased application modernization and avoiding downtime?",
+  "facebook_comment_text": "Beyond hardening ports with firewalls & encryption, a common blind spot remains application layer vulnerabilities & human factors. Even KDPA-compliant systems can be compromised by a single misconfigured API or a well-crafted phishing attack. 💡 What's the biggest internal challenge you face in maintaining a truly end-to-end security posture?",
   "error": null
 }
