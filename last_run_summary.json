@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Too often, 'powerful' software means hidden complexity and a steep learning curve that actually slows operations. The true win is when sophisticated backend logic feels like second nature in a clean mobile interface. This empowers teams to make real-time decisions, not just access data. 🤔 What's the biggest operational friction point you've faced due to powerful but clunky enterprise software?",
+  "facebook_comment_text": "💡 Beyond the visible lines of code, 'cheap fixes' often manifest as crippling project delays, talent drain, and a complete inability to innovate. We're talking about the silent killers of business agility that compound daily. When was the last time tech debt directly blocked a critical strategic initiative in your organization?",
   "error": null
 }
