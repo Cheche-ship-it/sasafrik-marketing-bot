@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond the login fatigue, consider the hidden engineering overhead: complex custom integrations bridging disparate systems. One point of failure can cascade. Our approach simplifies the *architecture* itself. What's the most common integration \"band-aid\" your team still relies on? 👇",
+  "facebook_comment_text": "The true test of a global-scale backend often lies in its initial design choices, not just current load. Foresight into future transaction spikes and diverse user demands saves untold headaches. 🤔 When planning new systems, how do you balance immediate needs with anticipating massive future growth and global scale requirements?",
   "error": null
 }
