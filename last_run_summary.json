@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 28,
-  "title": "The Zero Tech Debt Mandate",
+  "day": 29,
+  "title": "Unified Operations Control",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond the visible lines of code, 'cheap fixes' often manifest as crippling project delays, talent drain, and a complete inability to innovate. We're talking about the silent killers of business agility that compound daily. When was the last time tech debt directly blocked a critical strategic initiative in your organization?",
+  "facebook_comment_text": "Beyond the login fatigue, consider the hidden engineering overhead: complex custom integrations bridging disparate systems. One point of failure can cascade. Our approach simplifies the *architecture* itself. What's the most common integration \"band-aid\" your team still relies on? 👇",
   "error": null
 }
