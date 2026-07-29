@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond pretty pixels, are you A/B testing entire *user journey segments* to pinpoint friction before the cart? A slick UI means nothing if the payment gateway fails on low bandwidth. 🤔 What's been your most unexpected revenue-killer stemming from aesthetic-first design?",
+  "facebook_comment_text": "Lab-based network simulations rarely capture the unpredictable 'micro-outages' and variable latency common in the field. Our engineers often prioritize *graceful degradation* paths over peak performance alone, ensuring functionality even when connections struggle. 👇 What's the most challenging real-world network scenario your team has had to engineer around to maintain user experience?",
   "error": null
 }
