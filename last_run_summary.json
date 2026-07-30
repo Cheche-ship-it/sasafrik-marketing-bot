@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Moving from MVP to millions means shifting focus from 'feature velocity' to 'resilient scalability.' That early data model design? It's your long-term bedrock. It truly underpins your entire system's future. 🤔 What's one critical engineering decision that profoundly impacted your journey to enterprise-level scale?",
+  "facebook_comment_text": "Beyond just fewer fields, the *timing* of backend validation often introduces critical friction. A user shouldn't discover a typo in their email *after* filling 10 other fields. Inline, real-time feedback is non-negotiable for enterprise-level conversions. 💡 What's the biggest 'technical debt' related to UX friction your team is currently battling?",
   "error": null
 }
