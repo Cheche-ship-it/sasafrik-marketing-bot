@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just fewer fields, the *timing* of backend validation often introduces critical friction. A user shouldn't discover a typo in their email *after* filling 10 other fields. Inline, real-time feedback is non-negotiable for enterprise-level conversions. 💡 What's the biggest 'technical debt' related to UX friction your team is currently battling?",
+  "facebook_comment_text": "💡 Building for mobile-first in East Africa isn't just about screen size; it's anticipating dropped signals. Offline-first syncing ensures operations never halt, but tackling data integrity during intermittent connectivity is a real engineering puzzle. How has your team navigated unreliable network conditions in your mobile strategy?",
   "error": null
 }
