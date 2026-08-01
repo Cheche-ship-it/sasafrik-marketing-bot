@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Manual data entry isn't just about lost productivity; it’s about misallocating brilliant minds to repetitive tasks. The true power of automation is freeing up your team for strategic innovation. 💡 What's the most surprising bottleneck you've uncovered by still relying on manual data processes?",
+  "facebook_comment_text": "💡 Many overlook that a full legacy system rewrite often means rebuilding years of unique business logic from scratch, introducing new risks and delays. API encapsulation lets you selectively expose and integrate key functionalities, accelerating innovation where it matters most, without the massive overhaul. 🤔 What's the #1 legacy system challenge currently keeping you up at night?",
   "error": null
 }
