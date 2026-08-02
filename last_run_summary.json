@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 9,
-  "title": "Intelligent Email Parsing",
+  "day": 10,
+  "title": "Automated Stock Audits",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real engineering challenge isn't just parsing, it's ensuring that data *seamlessly* updates complex, often legacy, CRM/ERP systems without disrupting existing workflows. Our custom AI layers are purpose-built for deep, context-aware integration. 🤔 What's been your most surprising integration headache when automating back-office processes?",
+  "facebook_comment_text": "Beyond just automating adjustments, the real engineering challenge is maintaining *data integrity* across disparate retail endpoints in real-time. Think robust API versioning and idempotent operations. 🤔 What's been your biggest hurdle ensuring consistent stock data across your ecosystem?",
   "error": null
 }
