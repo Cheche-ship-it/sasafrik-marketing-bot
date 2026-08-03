@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 10,
-  "title": "Automated Stock Audits",
+  "day": 11,
+  "title": "The Localization Bridge",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just automating adjustments, the real engineering challenge is maintaining *data integrity* across disparate retail endpoints in real-time. Think robust API versioning and idempotent operations. 🤔 What's been your biggest hurdle ensuring consistent stock data across your ecosystem?",
+  "facebook_comment_text": "Many think \"integration\" is just connecting APIs. But true localization means understanding the *native* protocols, security nuances, and specific error codes of M-Pesa or WhatsApp in-region. It's the difference between a functional pipe and a resilient, optimized artery. 🤔 What hidden complexities have you uncovered in your local payment/comm integrations?",
   "error": null
 }
