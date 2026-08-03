@@ -2,8 +2,8 @@ name: Marketing Bot - Reels (scheduled)
 
 on:
   schedule:
-    # Trigger Facebook Reels Automation daily at 06:00 AM EAT (03:00 UTC) and 04:30 PM EAT (13:30 UTC)
-    - cron: '0 3 * * *'
+    # Trigger Facebook Reels Automation daily at 4:20:00 AM EAT (01:20 UTC) and 04:30 PM EAT (13:30 UTC)
+    - cron: '20 1 * * *'
     - cron: '30 13 * * *'
 
 # Grant the job the minimal permissions required to commit state files back to the repo

@@ -2,8 +2,8 @@ name: Marketing Bot - Standard Posts (scheduled)
 
 on:
   schedule:
-    # Trigger Standard Feed Image/Text Updates daily at 06:05 AM EAT (03:05 UTC)
-    - cron: '5 3 * * *'
+    # Trigger Standard Feed Image/Text Updates daily at 04:20 AM EAT (01:20 UTC)
+    - cron: '20 1 * * *'
 
 jobs:
   run-standard:
