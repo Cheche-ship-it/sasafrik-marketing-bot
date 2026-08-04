@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The true engineering challenge isn't just enabling offline USSD, but flawlessly integrating it to ensure real-time data consistency with your high-tier web logic. Think account balances, inventory, or order statuses! 🤔 What's been your most significant hurdle in maintaining data integrity across varying connectivity environments for all users?",
+  "facebook_comment_text": "Beyond just moving money, the true tactical edge lies in mitigating FX volatility and ensuring transaction immutability at every layer when bridging legacy ACH and modern digital wallets. 👇 How do you currently tackle reconciliation discrepancies or payment traceability issues in your cross-border operations?",
   "error": null
 }
