@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 14,
-  "title": "The WhatsApp Commerce Engine",
+  "day": 15,
+  "title": "Real-Time B2B Ledger Sync",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Think beyond just sales forms; imagine dynamic product recommendations triggered by user conversation history on WhatsApp, driving immediate engagement. 👇 What specific friction points are currently costing your business the most conversions in your digital sales funnel?",
+  "facebook_comment_text": "Beyond fraud, manually verifying diverse merchant data streams often means complex ETL processes that introduce latency and error *before* ledger sync. Instant integration isn't just about speed; it's about foundational data integrity. 🤔 What's the biggest technical hurdle your team faces aligning real-time transaction data with internal financial systems?",
   "error": null
 }
