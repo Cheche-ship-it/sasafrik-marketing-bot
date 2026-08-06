@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 16,
-  "title": "100% Uptime Guarantee",
+  "day": 17,
+  "title": "What is FinOps?",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Zero-trust containers aren't just about bolstering security; they're pivotal for isolating anomalies, ensuring rapid recovery, and turning potential global outages into localized blips. 👇 This proactive isolation is key to truly 'always on' infrastructure. How has adopting a zero-trust approach impacted your overall system resilience?",
+  "facebook_comment_text": "Achieving true 'scale to zero' demands more than just auto-scaling rules; it requires deeply evaluating stateful services & event-driven architecture. It's a fundamental shift! 💡 What's the trickiest legacy or architectural dependency you've encountered when trying to maximize cloud cost elasticity?",
   "error": null
 }
