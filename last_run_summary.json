@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Moving to microservices isn't just about breaking code; it's a paradigm shift in managing distributed transactions and ensuring end-to-end observability across countless services. Getting *that* right is key to true agility. 💡 What's one critical lesson you learned navigating complex inter-service dependencies?",
+  "facebook_comment_text": "Beyond simply deploying firewalls, the real engineering reality lies in continuous configuration auditing and enforcing the principle of least privilege for *every* single exposed port. 💡 One overlooked misconfiguration is a welcome mat for threats, even with robust encryption in place. How do you ensure your infrastructure's port policies remain watertight and regularly verified?",
   "error": null
 }
