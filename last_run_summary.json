@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 18,
-  "title": "The Database Disaster Test",
+  "day": 19,
+  "title": "Containerized Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The discussion here is fascinating. While geo-replication gives immense security, the actual \"restore\" process for some legacy systems can still trip up on application configuration or dependent service re-initialization, even with perfect data integrity. 💡 How often do you fully *dry-run* a complete system restoration with non-technical stakeholders present to feel the real-world RTO? 🤔",
+  "facebook_comment_text": "Moving to microservices isn't just about breaking code; it's a paradigm shift in managing distributed transactions and ensuring end-to-end observability across countless services. Getting *that* right is key to true agility. 💡 What's one critical lesson you learned navigating complex inter-service dependencies?",
   "error": null
 }
