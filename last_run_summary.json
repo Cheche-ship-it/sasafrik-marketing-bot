@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 22,
-  "title": "Automated Content Funnels",
+  "day": 23,
+  "title": "Dynamic Email Retargeting",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "🤔 Building true cross-channel automation isn't just about scheduling; it's an engineering feat of integrating disparate data sources and dynamically adapting content formats. This reallocates your team's genius from repetitive tasks to high-level strategic thinking. What's the biggest technical hurdle you've faced in unifying your content distribution efforts?",
+  "facebook_comment_text": "Capturing user context is one thing, but *instantaneously* orchestrating that data across your CDP, CRM, and email platform is where many systems stumble. It's the engineering backbone for true personalization. 👇 What's the biggest technical barrier you've faced connecting user behavior to actionable nurture campaigns?",
   "error": null
 }
