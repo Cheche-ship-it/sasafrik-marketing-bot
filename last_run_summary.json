@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 28,
-  "title": "The Zero Tech Debt Mandate",
+  "day": 29,
+  "title": "Unified Operations Control",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Many think \"fast & cheap\" saves money upfront. But the true cost often hides in *maintenance*, *debugging*, and *future development slowdowns*. Each line of un-tested, undocumented code is a ticking time bomb for your budget. What's the biggest tech debt nightmare your team has faced due to a focus on immediate velocity over long-term stability?",
+  "facebook_comment_text": "The real drain isn't just switching tabs; it's the delayed, often conflicting, insights that fragmented data feeds generate, hindering swift strategic decisions. 💡 How much time do you currently spend reconciling data from different platforms before leadership meetings?",
   "error": null
 }
