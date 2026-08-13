@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "It's not about making things pretty; it's about making them *work* seamlessly for your users, especially on varied African network conditions. 💡 A beautiful interface with a clunky checkout process is just a fancy brochure. Every tap, scroll, and wait time *must* be engineered for conversion. What's the biggest user journey roadblock you’ve successfully dismantled for better revenue?",
+  "facebook_comment_text": "Many assume \"offline mode\" is enough. But what about high latency, fluctuating 2G/3G, or intermittent drops? Real-world usability isn't just about 'on' or 'off'; it's about resilient performance in dynamic environments. 🤔 How do your teams specifically simulate and test for these granular network conditions?",
   "error": null
 }
