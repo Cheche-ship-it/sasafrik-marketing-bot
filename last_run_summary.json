@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Going from 0 to 1 million users demands a serious observability strategy from discovery, not just production. It's the only way to genuinely confirm architectural fitness under load. 💡 How did your team integrate logging, tracing, and metrics early on to predict and prevent scaling bottlenecks? 🤔",
+  "facebook_comment_text": "The engineering reality often involves balancing 'essential' data points with user patience. Progressive profiling or smart, invisible API calls can fetch data behind-the-scenes, simplifying the front-end experience drastically. 💡 What's the biggest internal challenge you've faced simplifying a critical user flow while still meeting data requirements?",
   "error": null
 }
