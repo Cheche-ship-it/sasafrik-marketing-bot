@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Many assume \"offline mode\" is enough. But what about high latency, fluctuating 2G/3G, or intermittent drops? Real-world usability isn't just about 'on' or 'off'; it's about resilient performance in dynamic environments. 🤔 How do your teams specifically simulate and test for these granular network conditions?",
+  "facebook_comment_text": "Going from 0 to 1 million users demands a serious observability strategy from discovery, not just production. It's the only way to genuinely confirm architectural fitness under load. 💡 How did your team integrate logging, tracing, and metrics early on to predict and prevent scaling bottlenecks? 🤔",
   "error": null
 }
