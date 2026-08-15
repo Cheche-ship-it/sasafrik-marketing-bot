@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The engineering reality often involves balancing 'essential' data points with user patience. Progressive profiling or smart, invisible API calls can fetch data behind-the-scenes, simplifying the front-end experience drastically. 💡 What's the biggest internal challenge you've faced simplifying a critical user flow while still meeting data requirements?",
+  "facebook_comment_text": "Beyond just mobile-first, the true game-changer in East Africa is building for unreliable connectivity. Think about seamless data access even in remote areas or during power cuts. 💡 How are you ensuring your users stay productive even when offline?",
   "error": null
 }
