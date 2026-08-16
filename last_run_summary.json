@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Automating unstructured data isn't just about OCR; it's about building pipelines that understand context, validate accuracy, and seamlessly integrate into your existing tech stack. This ensures *reliable* data, not just fast data. 👇 What was the most unexpected technical hurdle you faced when trying to automate your data flows?",
+  "facebook_comment_text": "Beyond just 'wrapping,' the real magic of API encapsulation lies in thoughtful design: ensuring scalability, security, and clean separation from the legacy core. It's truly an engineering art! 🤔 What's one non-negotiable principle you apply when designing APIs for legacy integration?",
   "error": null
 }
