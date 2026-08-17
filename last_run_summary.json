@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 8,
-  "title": "Legacy Systems Modernization",
+  "day": 9,
+  "title": "Intelligent Email Parsing",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just 'wrapping,' the real magic of API encapsulation lies in thoughtful design: ensuring scalability, security, and clean separation from the legacy core. It's truly an engineering art! 🤔 What's one non-negotiable principle you apply when designing APIs for legacy integration?",
+  "facebook_comment_text": "Beyond just reading attachments, our AI learns your specific data schemas, even across varied vendor formats. That adaptability is crucial for reliable CRM updates, not just one-off extractions. 🤔 What's the trickiest data validation challenge your team currently faces?",
   "error": null
 }
