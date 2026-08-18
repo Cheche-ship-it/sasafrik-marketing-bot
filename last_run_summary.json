@@ -2,8 +2,8 @@
   "mode": "REELS",
   "day": 10,
   "title": "Automated Stock Audits",
-  "facebook_upload": false,
-  "facebook_comment_posted": false,
-  "facebook_comment_text": null,
+  "facebook_upload": true,
+  "facebook_comment_posted": true,
+  "facebook_comment_text": "The real cost of mismatched inventory often hides in the engineering effort spent on manual reconciliation and data pipeline fixes, not just lost sales. It's about data integrity at source. 🤔 What's one unexpected technical debt or resource drain you've uncovered trying to keep inventory data perfectly aligned across systems?",
   "error": null
 }
