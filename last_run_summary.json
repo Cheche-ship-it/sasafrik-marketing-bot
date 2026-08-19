@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "It’s not just about simple offline transactions; it’s about architecting intelligent, secure USSD systems that seamlessly extend your complex web application logic to every feature phone. Think robust data integrity and instant syncs, regardless of network availability. 💡 What's the biggest barrier you've faced trying to deliver advanced digital services to an 'offline' audience?",
+  "facebook_comment_text": "Bridging regional ACHs and digital wallets effectively means mastering real-time reconciliation – not just uptime. It's about eliminating operational blind spots and ensuring every transaction is accounted for end-to-end for seamless collections. 🤔 What's your top challenge unifying disparate payment data sources across East Africa today?",
   "error": null
 }
