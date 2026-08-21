@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 16,
-  "title": "100% Uptime Guarantee",
+  "day": 17,
+  "title": "What is FinOps?",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Achieving true 100% uptime with elastic scaling across AWS, Azure, and GCP involves relentless proactive monitoring and sophisticated failover strategies, not just reacting to spikes. 💡 It's about designing resilience from the ground up. What's been your biggest architectural challenge in ensuring continuous service delivery?",
+  "facebook_comment_text": "💡 Beyond just scaling, the tactical gold is often in rigorously identifying those 'always-on' dev/test environments or forgotten services that *could* gracefully power down for 18+ hours daily. It's where significant quick wins lie. What's been your most surprising discovery of an unnecessarily running cloud resource?",
   "error": null
 }
