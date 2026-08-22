@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond just scaling, the tactical gold is often in rigorously identifying those 'always-on' dev/test environments or forgotten services that *could* gracefully power down for 18+ hours daily. It's where significant quick wins lie. What's been your most surprising discovery of an unnecessarily running cloud resource?",
+  "facebook_comment_text": "Achieving \"minutes to restore\" isn't just about the backup; it's about relentlessly *testing* your full restoration process end-to-end – including application integration. Without regular drills, even the best pipelines can harbor nasty surprises when you least expect them. 🤔 How often do you truly put your disaster recovery plan to the test, beyond just file verification?",
   "error": null
 }
