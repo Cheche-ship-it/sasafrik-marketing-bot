@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Ever felt the dread of a critical feature release being bottlenecked by the entire monolithic codebase? 😩 Breaking it down isn't just about scaling; it's about unlocking developer velocity and independent deployments. What's been your biggest \"aha!\" moment post-monolith transformation?",
+  "facebook_comment_text": "While external firewalls are vital, an often-overlooked reality is the necessity of internal network segmentation and zero-trust principles to contain breaches. 🤔 It's about minimizing lateral movement, even post-entry. What advanced strategies are you deploying to harden your internal perimeters against sophisticated threats?",
   "error": null
 }
