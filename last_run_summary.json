@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 24,
-  "title": "Real-time Customer Dashboards",
+  "day": 25,
+  "title": "Predictive Enterprise Churn",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Waiting a week to spot an anomaly or growth opportunity is like driving blind. Real-time dashboards aren't just data visualization; they're your immediate feedback loop for critical business pivots. 💡 What's the fastest you've ever had to react to a sudden change, and how did your data tools help (or hinder)?",
+  "facebook_comment_text": "💡 Proactive churn prevention goes beyond *identifying* anomalies. The real game-changer is having integrated playbooks that trigger hyper-personalized interventions *the moment* a deviation is flagged. What's your biggest hurdle in connecting these dots between insight and action? 🤔",
   "error": null
 }
