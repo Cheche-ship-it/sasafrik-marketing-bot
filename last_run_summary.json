@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The true test of software simplicity isn't just hiding complexity; it's enabling a junior analyst to execute powerful database tasks intuitively. That's engineering clarity. 💡 What's the most surprisingly complex operational step your current software fails to simplify for your team? 🤔",
+  "facebook_comment_text": "Beyond the immediate fixes, cheap code levies a silent tax: daily dev friction, missed innovation windows, and ultimately, a demoralized team. It's the silent killer of agility. 🤔 For tech leaders, how do you quantify this compounding cost, and what's been your biggest challenge in tackling it?",
   "error": null
 }
