@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 28,
-  "title": "The Zero Tech Debt Mandate",
+  "day": 29,
+  "title": "Unified Operations Control",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond the immediate fixes, cheap code levies a silent tax: daily dev friction, missed innovation windows, and ultimately, a demoralized team. It's the silent killer of agility. 🤔 For tech leaders, how do you quantify this compounding cost, and what's been your biggest challenge in tackling it?",
+  "facebook_comment_text": "Engineers know the pain: custom API glue code, daily cron jobs, and chasing down error logs for 'simple' data transfers. Unifying isn't just about fewer logins; it's about robust, resilient data pipelines. 👇 What's the hidden cost of patchwork integrations in your current tech stack?",
   "error": null
 }
