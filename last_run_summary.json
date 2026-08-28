@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 30,
-  "title": "Engineered for Global Scale",
+  "day": 1,
+  "title": "Aesthetics vs. Revenue Call",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Global scale isn't just about traffic volume; it's about anticipating diverse user behavior, maintaining uptime across time zones, and engineering true fault tolerance into every layer. Many systems falter at the data consistency hurdle. What's your biggest architectural lesson learned when scaling for millions of transactions globally?",
+  "facebook_comment_text": "Designing for revenue means rigorously optimizing every click, every load time. On African networks, beautiful interfaces often fail if they ignore data costs or latency spikes. We engineer journeys to *anticipate* these realities. 👇 What non-aesthetic design element has most impacted your conversion rates?",
   "error": null
 }
