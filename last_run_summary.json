@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Engineers know the pain: custom API glue code, daily cron jobs, and chasing down error logs for 'simple' data transfers. Unifying isn't just about fewer logins; it's about robust, resilient data pipelines. 👇 What's the hidden cost of patchwork integrations in your current tech stack?",
+  "facebook_comment_text": "💡 Global scale isn't just about traffic volume; it's about anticipating diverse user behavior, maintaining uptime across time zones, and engineering true fault tolerance into every layer. Many systems falter at the data consistency hurdle. What's your biggest architectural lesson learned when scaling for millions of transactions globally?",
   "error": null
 }
