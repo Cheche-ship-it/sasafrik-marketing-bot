@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Designing for revenue means rigorously optimizing every click, every load time. On African networks, beautiful interfaces often fail if they ignore data costs or latency spikes. We engineer journeys to *anticipate* these realities. 👇 What non-aesthetic design element has most impacted your conversion rates?",
+  "facebook_comment_text": "Building for real-world instability means diving deeper than mere 'lightweight' queries. It's about resilient error handling, aggressive local caching, and testing with *simulated* packet loss, not just reduced bandwidth. 🤔 How has your team adapted testing environments to truly mirror unpredictable network conditions?",
   "error": null
 }
