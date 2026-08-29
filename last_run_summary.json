@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Building for real-world instability means diving deeper than mere 'lightweight' queries. It's about resilient error handling, aggressive local caching, and testing with *simulated* packet loss, not just reduced bandwidth. 🤔 How has your team adapted testing environments to truly mirror unpredictable network conditions?",
+  "facebook_comment_text": "Scaling to millions means more than just adding VMs; it's architecting for distributed data and eventual consistency from day zero. Missing that foundational step often leads to costly, painful refactors later. 🤔 What's the biggest architectural challenge you've faced during hyper-growth, and how did your team tackle it?",
   "error": null
 }
