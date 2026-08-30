@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling to millions means more than just adding VMs; it's architecting for distributed data and eventual consistency from day zero. Missing that foundational step often leads to costly, painful refactors later. 🤔 What's the biggest architectural challenge you've faced during hyper-growth, and how did your team tackle it?",
+  "facebook_comment_text": "It's not just the number of steps; it's the *perceived* effort. Progressive profiling—gathering info over time instead of all at once—can dramatically ease user anxiety and boost completion rates. 💡 What's one tiny form tweak that delivered surprisingly big conversion gains for your enterprise? Share your insights! 👇",
   "error": null
 }
