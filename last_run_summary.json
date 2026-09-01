@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 8,
-  "title": "Legacy Systems Modernization",
+  "day": 9,
+  "title": "Intelligent Email Parsing",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Legacy modernization isn't just about pure speed; it's about strategically side-stepping the immense risks of full system rewrites. 💡 API encapsulation preserves decades of validated business logic, drastically cutting project failure rates and protecting institutional knowledge. What \"hidden\" challenge did you face with your last legacy modernization effort?",
+  "facebook_comment_text": "The true engineering challenge in email automation isn't just extracting text, but intelligently handling the sheer diversity of attachment formats and layouts. Our AI isn't rigid; it adapts and validates content across *hundreds* of unique vendor invoice templates and statement types. 💡 What's the trickiest document format your team struggles to automate consistent data extraction from?",
   "error": null
 }
