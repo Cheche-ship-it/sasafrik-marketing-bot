@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real engineering magic isn't just scanning documents, it's teaching systems to *understand* varying layouts & context in unstructured data fields. That's where true efficiency unlocks. 💡 What's the most surprising hidden cost or operational bottleneck you've uncovered from relying on manual data processes?",
+  "facebook_comment_text": "Legacy modernization isn't just about pure speed; it's about strategically side-stepping the immense risks of full system rewrites. 💡 API encapsulation preserves decades of validated business logic, drastically cutting project failure rates and protecting institutional knowledge. What \"hidden\" challenge did you face with your last legacy modernization effort?",
   "error": null
 }
