@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 10,
-  "title": "Automated Stock Audits",
+  "day": 11,
+  "title": "The Localization Bridge",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond automation, achieving truly accurate 24/7 stock counts relies on pristine real-time data integrity from every distributed touchpoint. It's the foundational plumbing preventing phantom inventory. What's been your biggest hurdle in unifying disparate data sources for real-time accuracy?",
+  "facebook_comment_text": "💡 When bridging custom backends to local channels like M-Pesa, building in robust, region-aware retry mechanisms and idempotent transactions is crucial for data integrity. A dropped connection shouldn't mean a lost payment. 👇 How do you ensure data consistency across your localized payment rails and manage the edge cases of regional network variability?",
   "error": null
 }
