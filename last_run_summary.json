@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "It's not just about enabling transactions; the real engineering feat is designing robust, asynchronous data pipelines that guarantee integrity and reconciliation between offline USSD events and complex online web logic, even after days of no connectivity. 💡 What's been your biggest architectural challenge bridging the digital divide for your users?",
+  "facebook_comment_text": "The magic behind \"seamless\" cross-border payments isn't just connectivity; it's robust engineering consolidating diverse API standards, ensuring real-time settlement integrity, and navigating complex regulatory frameworks. It’s about building fault-tolerant layers. 👇 What's the single most critical challenge your operations team faces in achieving frictionless multi-currency reconciliation?",
   "error": null
 }
