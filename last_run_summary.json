@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 14,
-  "title": "The WhatsApp Commerce Engine",
+  "day": 15,
+  "title": "Real-Time B2B Ledger Sync",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond basic chat, the real power lies in secure, real-time API integration with inventory and payment systems. It's a backend engineering feat ensuring every WhatsApp interaction is seamless and trusted. 🤔 What's been your biggest hurdle scaling secure, multi-channel commerce solutions today?",
+  "facebook_comment_text": "Beyond direct fraud risks, the *latency* of manual reconciliation is a huge hidden cost, tying up valuable finance and tech resources. Our solution addresses this core integration challenge, ensuring data integrity from source to ledger. 💡 What's the biggest operational bottleneck your teams face *before* data even hits your central ledger?",
   "error": null
 }
