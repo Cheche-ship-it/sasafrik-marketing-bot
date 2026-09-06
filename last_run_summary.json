@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling compute to absolute zero is a dream for many! 💡 Beyond just shutting down, a key tactical move is leveraging serverless functions or container orchestration with specific idle timeouts to truly optimize cost without sacrificing cold start performance on ramp-up. What specific tech stack or tooling have you found most effective in achieving true zero-scaling, and what challenges did you...",
+  "facebook_comment_text": "While a full wipe is terrifying, the insidious threat of *data corruption* or ransomware requiring precise point-in-time recovery often poses an even trickier challenge. Our pipelines account for this granular control. 💡 What's been your biggest database recovery scare that *wasn't* a simple wipe?",
   "error": null
 }
