@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Migrating to microservices is more than just dynamic scaling; it's a fundamental shift towards managing distributed systems and eventual consistency. 💡 It means trading monolithic simplicity for unparalleled resilience and flexibility. What's been your team's biggest operational curveball after making the leap?",
+  "facebook_comment_text": "Encryption is powerful, but effective key management across the data lifecycle is often the real engineering hurdle, especially when balancing performance with KDP Act mandates. Data discovery tools are crucial to encrypt *all* sensitive data, not just the obvious. 👇 What's your top encryption challenge: key management or comprehensive data discovery?",
   "error": null
 }
