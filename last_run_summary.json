@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 22,
-  "title": "Automated Content Funnels",
+  "day": 23,
+  "title": "Dynamic Email Retargeting",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real power of dynamic funnels isn't just sending; it's seamlessly integrating insights from your CRM, analytics, and content repositories. This allows our systems to inform *what* gets published, *where*, and *when*, based on genuine engagement. 💡 What's been your biggest challenge in unifying disparate data sources to fuel smarter content automation?",
+  "facebook_comment_text": "The real magic is in stitching together disparate data points – from initial page visit to content consumption patterns – in real-time, then making that data *actionable* for email automation. Many platforms claim it, few execute seamlessly. 👇 What's your biggest data integration challenge when trying to personalize at scale?",
   "error": null
 }
