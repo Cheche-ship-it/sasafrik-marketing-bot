@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 24,
-  "title": "Real-time Customer Dashboards",
+  "day": 25,
+  "title": "Predictive Enterprise Churn",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real power isn't just seeing data live, it's transforming operations from reactive firefighting to proactive strategy. Building those resilient, real-time data pipelines requires meticulous engineering, but the ROI on incident prevention is immense. 💡 What's the biggest operational blind spot your team wishes they could eliminate *instantly*?",
+  "facebook_comment_text": "Building predictive churn models isn't just about algorithms; it's deeply rooted in the quality and breadth of your behavioral data. Garbage in, garbage out, right? 💡 Ensuring robust data pipelines for anomaly detection is often the biggest engineering hurdle. What data challenges have you faced when trying to get ahead of churn?",
   "error": null
 }
