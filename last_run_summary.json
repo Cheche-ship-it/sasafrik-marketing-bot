@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Ever calculated the hidden cost of daily data reconciliation? It's not just wasted clicks; it's delayed decisions, missed insights, and potential compliance headaches. Moving from siloed platforms to a single source of truth isn't just about efficiency; it's about data integrity at scale. 💡 How often do data discrepancies from disparate systems lead to critical operational delays for your team?",
+  "facebook_comment_text": "Scaling isn't just about throughput; it's about maintaining sub-second latency across continents while handling millions of transactions. That requires deep dives into database optimization and edge caching strategies. 🤔 What's the most critical performance metric you prioritize when building for true global scale?",
   "error": null
 }
