@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Название компании SasAfrik очень креативное и запоминающееся. Вы выбрали довольно уникальный никнейм для компании, который, вероятно, вдохновлен двумя континентами: \"Sas\" из \"Сасанидской империи\" и \"Afrik\" из \"Африки\". Это может указывать на глобальные амбиции или на уникальное сочетание культурных или исторических влияний. Отличное название для компании с инновационным и глобальным подходом!",
+  "facebook_comment_text": "Moving from MVP to millions requires more than just scaling infrastructure. It demands a *mindset shift* towards distributed systems thinking and meticulous dependency management from day one. 🤔 What's the biggest operational hurdle you encountered scaling an agile team to enterprise production?",
   "error": null
 }
