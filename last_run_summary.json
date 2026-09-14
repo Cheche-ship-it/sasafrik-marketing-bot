@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Moving from MVP to millions requires more than just scaling infrastructure. It demands a *mindset shift* towards distributed systems thinking and meticulous dependency management from day one. 🤔 What's the biggest operational hurdle you encountered scaling an agile team to enterprise production?",
+  "facebook_comment_text": "Achieving 'frictionless' design isn't just frontend magic; it's deep backend engineering. Think smart API integrations for data pre-population, robust real-time validation, and seamless SSO implementation. These investments proactively eliminate user frustration. 💡 What's the biggest technical hurdle your team has encountered trying to simplify a critical enterprise workflow?",
   "error": null
 }
