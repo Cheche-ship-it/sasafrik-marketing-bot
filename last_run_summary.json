@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Achieving 'frictionless' design isn't just frontend magic; it's deep backend engineering. Think smart API integrations for data pre-population, robust real-time validation, and seamless SSO implementation. These investments proactively eliminate user frustration. 💡 What's the biggest technical hurdle your team has encountered trying to simplify a critical enterprise workflow?",
+  "facebook_comment_text": "The mobile shift isn't just *access*; it's empowering critical operations where power or internet is intermittent. Offline-first design isn't a luxury; it's a foundational engineering reality for sustained productivity & real-time data flow. 👇 What crucial business functions has truly reliable mobile access (even offline) unlocked for your organization?",
   "error": null
 }
