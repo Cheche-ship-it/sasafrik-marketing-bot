@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 8,
-  "title": "Legacy Systems Modernization",
+  "day": 9,
+  "title": "Intelligent Email Parsing",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond raw speed, API encapsulation cleanly isolates decades of critical business logic from the new, agile services. This means less risk, faster feature delivery, and no need to untangle spaghetti code. 💡 What's the most complex legacy dependency currently stifling your innovation roadmap?",
+  "facebook_comment_text": "It's not just about speed; our AI *learns* your specific document nuances, ensuring validation accuracy that static rules often miss. Imagine the impact of zero-error invoice processing! 💡 What's the single biggest headache automated email workflows could eliminate for your operations right now?",
   "error": null
 }
