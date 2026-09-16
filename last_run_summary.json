@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Manual data entry isn't just about salaries. Think about the cascade: error corrections, delayed insights, audit nightmares, and crucially, diverting your best talent from strategic initiatives. That's where the real profit killer lurks. 💡 How has the hidden cost of manual data processes impacted your team's capacity for innovation?",
+  "facebook_comment_text": "Beyond raw speed, API encapsulation cleanly isolates decades of critical business logic from the new, agile services. This means less risk, faster feature delivery, and no need to untangle spaghetti code. 💡 What's the most complex legacy dependency currently stifling your innovation roadmap?",
   "error": null
 }
