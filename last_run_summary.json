@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 10,
-  "title": "Automated Stock Audits",
+  "day": 11,
+  "title": "The Localization Bridge",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Automating stock isn't just about detecting errors, it's about preventing them at the transaction level by unifying diverse data streams. It tackles the real engineering challenge of real-time data integrity from every retail endpoint. 💡 What's the most surprising inventory 'ghost' your team has uncovered due to siloed systems?",
+  "facebook_comment_text": "Skipping truly native integration often leads to hidden tech debt, fragile user experiences, and costly downtime for critical M-Pesa transactions. It's an engineering reality check. 🤔 What unexpected challenges have you faced trying to 'bridge' disparate systems without a dedicated, robust solution?",
   "error": null
 }
