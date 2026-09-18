@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "We're talking beyond basic texts. The real magic is crafting architectures that flawlessly sync crucial offline transactions to complex web platforms, guaranteeing data integrity and user trust. 💡 What's your biggest strategic challenge when ensuring platform access for *all* potential customers, regardless of their connectivity?",
+  "facebook_comment_text": "Reliability in multi-currency transactions means robust idempotent processing and meticulous error handling *before* a failure impacts corporate flow. We architect for zero-downtime payments. 👇 How are you tackling the engineering complexities of maintaining high availability across your regional payment integrations?",
   "error": null
 }
