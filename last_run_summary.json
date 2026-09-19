@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 13,
-  "title": "Multi-Currency Banking Layers",
+  "day": 14,
+  "title": "The WhatsApp Commerce Engine",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Reliability in multi-currency transactions means robust idempotent processing and meticulous error handling *before* a failure impacts corporate flow. We architect for zero-downtime payments. 👇 How are you tackling the engineering complexities of maintaining high availability across your regional payment integrations?",
+  "facebook_comment_text": "Building a robust WhatsApp commerce engine isn't just about chatbots; it's about secure API integrations, real-time inventory sync, and intelligent conversational flows that handle exceptions. 🤔 For tech leaders, how are you currently navigating the complexities of secure payment processing or inventory management within instant messaging platforms?",
   "error": null
 }
