@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling compute to absolute zero is gold, but the real engineering finesse lies in ensuring *zero-downtime* when traffic spikes back up from that idle state. 📈 What's your team's biggest challenge in balancing aggressive cost optimization with rock-solid service availability?",
+  "facebook_comment_text": "💡 Beyond just backups, the real test is your RTO & RPO when disaster strikes. We often see teams struggle not with *having* data, but with validating consistent, dependency-aware restoration in minutes. How often do you truly simulate a full-scale, multi-service database wipe and recovery drill?",
   "error": null
 }
