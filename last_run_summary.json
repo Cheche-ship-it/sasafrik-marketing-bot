@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Monoliths aren't just slow at peak; they can truly stifle innovation & feature velocity year-round. Microservices, when done right, empower smaller teams to autonomously build & deploy. 👇 What's the biggest productivity gain (or unexpected challenge!) your team faced adopting microservices?",
+  "facebook_comment_text": "Beyond securing ports with firewalls, true resilience comes from continuous security posture management and rigorous employee training on social engineering tactics. 👇 How do you keep your human firewall strong and adapt to sophisticated phishing attacks?",
   "error": null
 }
