@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 23,
-  "title": "Dynamic Email Retargeting",
+  "day": 24,
+  "title": "Real-time Customer Dashboards",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 The real engineering challenge in truly dynamic email retargeting isn't just *capturing* context, it's the real-time unification of user data from disparate platforms into a single source of truth. Without that robust backend, hyper-personalization often remains aspirational. 🤔 What's the toughest technical or organizational hurdle you've encountered in achieving a unified customer view for...",
+  "facebook_comment_text": "Many focus on the visual, but the real power of live dashboards lies in seamlessly integrating disparate data sources – from customer touchpoints to backend server logs – into one unified stream. That's the heavy lifting! 🤔 What's been your biggest data integration headache building a holistic view?",
   "error": null
 }
