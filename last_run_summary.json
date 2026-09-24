@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 24,
-  "title": "Real-time Customer Dashboards",
+  "day": 25,
+  "title": "Predictive Enterprise Churn",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Many focus on the visual, but the real power of live dashboards lies in seamlessly integrating disparate data sources – from customer touchpoints to backend server logs – into one unified stream. That's the heavy lifting! 🤔 What's been your biggest data integration headache building a holistic view?",
+  "facebook_comment_text": "💡 Building truly predictive churn models isn't just about spotting anomalies; it's about integrating diverse data points—from usage patterns to support interactions—to paint a full picture. The real magic happens when those insights trigger precisely timed, personalized interventions. How are you currently leveraging cross-functional data to anticipate user needs before they churn?",
   "error": null
 }
