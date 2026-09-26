@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 28,
-  "title": "The Zero Tech Debt Mandate",
+  "day": 29,
+  "title": "Unified Operations Control",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "🤔 Think of your codebase not as a one-time build, but a strategic asset. Undocumented spaghetti code erodes its value, making future innovations costly or impossible. Clean, modular code, however, becomes an accelerator. What's one tangible way investing in code quality has paid off for your organization?",
+  "facebook_comment_text": "Beyond login fatigue, the real engineering challenge is the constant context switching and maintaining fragile custom APIs just to get a unified view. 💡 It drains developer hours from innovation into reconciliation. What's the most critical bottleneck or 'duct tape' integration your team is still wrestling with? 🤔",
   "error": null
 }
