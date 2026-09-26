@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Achieving \"effortless\" clarity in supply chain data often means a *massive* engineering lift behind the scenes. We bridge that gap by making robust database operations feel intuitive, not daunting. 🤔 What's the most common software friction point you've seen derail supply chain efficiency?",
+  "facebook_comment_text": "🤔 Think of your codebase not as a one-time build, but a strategic asset. Undocumented spaghetti code erodes its value, making future innovations costly or impossible. Clean, modular code, however, becomes an accelerator. What's one tangible way investing in code quality has paid off for your organization?",
   "error": null
 }
