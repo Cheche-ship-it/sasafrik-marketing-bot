@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "🤔 Beyond lightweight queries, we see how crucial **data synchronization strategies** are when networks drop mid-transaction. It's the difference between a successful update and a frustrated user. 👇 What's the biggest network-related friction point your users face consistently?",
+  "facebook_comment_text": "Moving beyond MVP, the real test is baking in security and observability from blueprint to production, not as afterthoughts. ⚙️ How do you ensure your CI/CD pipelines are truly ready for enterprise-level scale without slowing down agile delivery?",
   "error": null
 }
