@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Exactly! Revenue isn't about flashy UIs; it's about optimizing every micro-interaction with user data. We see overlooked elements like form field validation or even button placement causing significant revenue leaks. 💡 How often do you audit your entire user flow based purely on conversion analytics, not just visual appeal?",
+  "facebook_comment_text": "🤔 Beyond lightweight queries, we see how crucial **data synchronization strategies** are when networks drop mid-transaction. It's the difference between a successful update and a frustrated user. 👇 What's the biggest network-related friction point your users face consistently?",
   "error": null
 }
