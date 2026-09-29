@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond just field count, the real killer is often poorly implemented validation or forcing unnecessary data upfront. Engineering for true frictionlessness means balancing data needs with user patience via progressive profiling. It's a strategic move, not just a design tweak. What's the trickiest form element or data point you've had to fight for (or against) in your checkout flows?",
+  "facebook_comment_text": "🤔 It's not just about building for mobile; it's about mastering the *offline-first sync* paradigm. Ensuring data integrity and seamless conflict resolution when devices reconnect can make or break an app's reliability. What's been your biggest challenge with data synchronization across diverse network conditions?",
   "error": null
 }
