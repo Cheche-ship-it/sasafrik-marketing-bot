@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Moving beyond MVP, the real test is baking in security and observability from blueprint to production, not as afterthoughts. ⚙️ How do you ensure your CI/CD pipelines are truly ready for enterprise-level scale without slowing down agile delivery?",
+  "facebook_comment_text": "💡 Beyond just field count, the real killer is often poorly implemented validation or forcing unnecessary data upfront. Engineering for true frictionlessness means balancing data needs with user patience via progressive profiling. It's a strategic move, not just a design tweak. What's the trickiest form element or data point you've had to fight for (or against) in your checkout flows?",
   "error": null
 }
