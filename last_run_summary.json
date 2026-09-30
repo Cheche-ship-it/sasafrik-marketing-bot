@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 5,
-  "title": "The Mobile First Empire",
+  "day": 6,
+  "title": "Recapture 80% of Your Time",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "🤔 It's not just about building for mobile; it's about mastering the *offline-first sync* paradigm. Ensuring data integrity and seamless conflict resolution when devices reconnect can make or break an app's reliability. What's been your biggest challenge with data synchronization across diverse network conditions?",
+  "facebook_comment_text": "The beauty of bespoke AI isn't just instant execution; it's the scalability and resilience it brings to connecting disparate, even legacy systems without custom API spaghetti. No more brittle integrations that break with every update! 👇 What's the trickiest multi-system data sync challenge your team faces today?",
   "error": null
 }
