@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 8,
-  "title": "Legacy Systems Modernization",
+  "day": 9,
+  "title": "Intelligent Email Parsing",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Encapsulating legacy systems with APIs isn't just a band-aid; it's a strategic way to unlock decades of embedded business logic and critical data. 💡 Avoid the massive cost & risk of a full rebuild while enabling swift new integrations. What's the biggest operational hurdle you've encountered trying to modernize essential but aged systems?",
+  "facebook_comment_text": "Beyond just speed, the real win with custom AI parsing is conquering unstructured data chaos in diverse back-office emails. Generic tools often falter with varied attachment formats or complex invoice layouts, leading to rework. Our layers adapt to *your* unique document types, ensuring precision. 👇 What's the trickiest email parsing challenge your team faces that current solutions can't handle?",
   "error": null
 }
