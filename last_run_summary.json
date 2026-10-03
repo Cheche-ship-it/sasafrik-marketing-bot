@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Ensuring eventual consistency between offline USSD transactions and cloud-based web platforms isn't just a feature, it's a foundational architectural challenge. 💡 It requires meticulous state management and robust error handling to guarantee data integrity across disparate environments. How do *you* approach syncing critical user data from low-connectivity channels?",
+  "facebook_comment_text": "The true resilience of cross-border payments often lies in seamlessly managing disparate data formats and real-time compliance checks across diverse financial rails. That's the engineering reality behind \"never fail.\" 💡 How have your tech leaders ensured data integrity and security when integrating multiple payment ecosystems for scaling?",
   "error": null
 }
