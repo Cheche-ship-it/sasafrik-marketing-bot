@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 18,
-  "title": "The Database Disaster Test",
+  "day": 19,
+  "title": "Containerized Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Backups are table stakes, but a *proven* recovery plan is gold. We've seen ops teams discover their 'restore' process was a multi-day manual scramble, not minutes. 💡 It’s about verifying your RTO/RPO consistently. What common oversight do you think trips up most database recovery strategies?",
+  "facebook_comment_text": "The real magic of microservices for peak performance often lies in correctly defining bounded contexts, not just splitting code. Avoid the \"distributed monolith\" trap! 🤔 For those who've tackled this, what was your biggest hurdle in achieving true service autonomy and dynamic scaling?",
   "error": null
 }
