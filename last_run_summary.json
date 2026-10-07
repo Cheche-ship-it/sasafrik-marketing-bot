@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 20,
-  "title": "The Security Shield Architecture",
+  "day": 21,
+  "title": "Hands-Free Marketing Engine",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "While end-to-end firewalls secure the perimeter, the real challenge often lies in consistently auditing and patching internal network segments & critical API endpoints. A single unmanaged port can be a major entry point. 🤔 What's your strategy for preventing overlooked vulnerabilities within your deeply nested infrastructure?",
+  "facebook_comment_text": "Automating lead gen isn't just about volume; it's about the *precision* of your discovery logs. A truly hands-free engine intelligently identifies high-intent signals, not just clicks. This demands sophisticated data architecture and ML. 🤔 What's been your biggest engineering hurdle in building truly smart lead qualification?",
   "error": null
 }
