@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 23,
-  "title": "Dynamic Email Retargeting",
+  "day": 24,
+  "title": "Real-time Customer Dashboards",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Reading user intent vs. basic segmentation is a huge differentiator. The real engineering reality often hits when integrating disparate data sources to build that *exact* user context. Generic emails feel automated; truly dynamic ones feel almost psychic. 💡 Where do you see the biggest integration challenge for hyper-personalized outreach?",
+  "facebook_comment_text": "💡 The real magic of live dashboards isn't just visualization, it's the instant, integrated data stream from disparate systems that powers immediate problem-solving and rapid opportunity seizure. No more digging through siloed reports to connect the dots. What's the biggest 'Aha!' moment you've had from real-time data?",
   "error": null
 }
