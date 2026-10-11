@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "It's not just about a clean interface; it's the meticulous backend engineering that translates intricate database logic into intuitive actions, preventing data inconsistencies before they become operational \"bugs.\" 💡 This abstraction is key for agile supply chains. What's the most common source of \"bugs\" or friction points your team encounters when managing complex data?",
+  "facebook_comment_text": "💡 Tackling tech debt isn't just about fixing problems; it's about proactive architectural governance. Every line of clean, tested code is an investment that compounds, ensuring agility and scalability rather than hindering it. It prevents the slow decay of developer morale and innovation capacity. 🤔 What tactical shift helped your team finally prioritize quality over speed, and what immediate...",
   "error": null
 }
