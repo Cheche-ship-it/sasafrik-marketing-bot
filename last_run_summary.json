@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond lightweight queries, how are you tackling data serialization and minimizing roundtrips? Bloated payloads are a silent killer on inconsistent networks, often demanding more processing power too. We've seen apps transform by focusing on this. What's the most surprising network optimization challenge *your* team has overcome in an emerging market?",
+  "facebook_comment_text": "Building for millions isn't a one-time blueprint; it's a living ecosystem. The real agility challenge comes in continuously refactoring as user data reveals new scalability frontiers and unforeseen edge cases. 🤔 What's the most unexpected bottleneck you've encountered scaling an application to enterprise levels?",
   "error": null
 }
