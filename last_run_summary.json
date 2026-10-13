@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Forget subjective 'prettiness.' A revenue-centric design engineers *every* UI element to reduce friction & drive action, measuring its impact on user retention. It's an engineering reality: conversion isn't pretty, it's efficient. 💡 Where do your teams struggle most to pivot from aesthetic-first to metric-driven design?",
+  "facebook_comment_text": "💡 Beyond lightweight queries, how are you tackling data serialization and minimizing roundtrips? Bloated payloads are a silent killer on inconsistent networks, often demanding more processing power too. We've seen apps transform by focusing on this. What's the most surprising network optimization challenge *your* team has overcome in an emerging market?",
   "error": null
 }
