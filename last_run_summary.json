@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Building for millions isn't a one-time blueprint; it's a living ecosystem. The real agility challenge comes in continuously refactoring as user data reveals new scalability frontiers and unforeseen edge cases. 🤔 What's the most unexpected bottleneck you've encountered scaling an application to enterprise levels?",
+  "facebook_comment_text": "True UX brilliance often hides engineering complexity. It's not just cutting steps; it's smart pre-fill logic and real-time inline validation that proactively guides users. Think seamless data handoffs! 💡 What's the most common *hidden* friction point your teams still battle when optimizing conversion flows?",
   "error": null
 }
