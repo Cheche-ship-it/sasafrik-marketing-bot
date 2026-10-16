@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just hours, manual data entry's real sting is in the *cumulative impact* of human error and the missed opportunity cost of skilled teams stuck on repetitive tasks. 💡 The engineering challenge isn't just OCR, but truly *understanding* nuanced, variable unstructured text at scale. What's the most surprising hidden cost manual data entry has exacted in *your* organization?",
+  "facebook_comment_text": "Think of API encapsulation as unlocking your golden legacy data for modern analytics & agile microservices, without the brutal rip-and-replace project. It's about accelerating innovation on a stable foundation. 💡 What's the most critical data or functionality you wish you could liberate from your legacy systems today?",
   "error": null
 }
