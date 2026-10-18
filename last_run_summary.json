@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 11,
-  "title": "The Localization Bridge",
+  "day": 12,
+  "title": "Power of USSD & SMS",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Going native with M-Pesa & WhatsApp isn't just a feature, it's a foundation. The real engineering reality? Ensuring transaction idempotency, robust error recovery for intermittent networks, and seamless data reconciliation. 💡 A single integration flaw can cost customer trust & revenue. What's one critical overlooked aspect you've learned about localizing payment gateways?",
+  "facebook_comment_text": "Beyond enabling transactions, the engineering reality of seamlessly syncing critical offline USSD data with sophisticated web logic is crucial. Think about ensuring data integrity and timely analytics even when connectivity is sporadic. 💡 This isn't just about access; it's about building a truly resilient data ecosystem. What's the biggest data integration challenge your platform faces with...",
   "error": null
 }
