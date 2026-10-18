@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond enabling transactions, the engineering reality of seamlessly syncing critical offline USSD data with sophisticated web logic is crucial. Think about ensuring data integrity and timely analytics even when connectivity is sporadic. 💡 This isn't just about access; it's about building a truly resilient data ecosystem. What's the biggest data integration challenge your platform faces with...",
+  "facebook_comment_text": "Bridging ACH and digital wallets isn't just about connectivity; it's about engineering resilient, low-latency API layers that ensure immediate fund availability and transaction integrity, even when underlying systems vary. 🤔 What hidden infrastructure challenge has surprised you most in scaling cross-border operations?",
   "error": null
 }
