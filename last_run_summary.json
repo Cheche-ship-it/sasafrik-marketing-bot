@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 14,
-  "title": "The WhatsApp Commerce Engine",
+  "day": 15,
+  "title": "Real-Time B2B Ledger Sync",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Automating sales isn't just about efficiency; it's about scaling *personalized* CX. Our conversational engines ensure every customer interaction is smooth, from browsing to secure checkout, all within WhatsApp. What's the biggest bottleneck in your current customer journey that you wish could be 'conversationalized'?",
+  "facebook_comment_text": "Manual reconciliation isn't just slow; it's a critical vulnerability point where data discrepancies can fester undetected. The real engineering challenge? Ensuring integrity at the *very first touchpoint* of a transaction, not just at month-end. 💡 What's been your toughest challenge in achieving real-time ledger integrity and eliminating those blind spots?",
   "error": null
 }
