@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Truly scaling compute down to absolute zero requires more than just auto-scaling rules; it demands deep visibility into *idle* resources and event-driven architectures. 💡 It's a game-changer for non-prod environments. What's been your biggest engineering challenge when implementing a \"scale to zero\" strategy for cost optimization, especially balancing latency vs. savings?",
+  "facebook_comment_text": "Having geographically diverse, auto-replicating backups is crucial, but the real challenge is validating your RTO/RPO. Many organizations discover their 'minutes' restoration goal hits a snag during actual, full-scale recovery drills. 💡 How often does your team perform non-destructive restore tests, and what's the biggest bottleneck you've uncovered?",
   "error": null
 }
