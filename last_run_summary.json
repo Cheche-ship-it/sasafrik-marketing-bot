@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "It's not just about speed; microservices empower independent deployments & team autonomy, breaking down release bottlenecks. 💡 But truly achieving that requires robust CI/CD and observability. What's your top non-technical challenge when moving towards distributed systems?",
+  "facebook_comment_text": "While external firewalls are critical, the internal network often holds hidden vulnerabilities. Think deeply about zero-trust principles and micro-segmentation to fortify your defenses from within. 🤔 What's your biggest challenge in implementing granular access control across your corporate network?",
   "error": null
 }
