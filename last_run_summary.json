@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 23,
-  "title": "Dynamic Email Retargeting",
+  "day": 24,
+  "title": "Real-time Customer Dashboards",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "True hyper-personalization hinges on unifying real-time behavioral signals, not just basic CRM data. The engineering challenge is merging those micro-interactions into a single, actionable profile *instantly*. 💡 What's the biggest internal barrier to delivering immediate, context-aware nurture sequences in your organization?",
+  "facebook_comment_text": "💡 Beyond just seeing numbers, real-time dashboards enable immediate anomaly detection. Imagine spotting a server health dip or a conversion bottleneck *as it happens*, not days later. That's the power of proactive response. What's the most critical insight you've ever missed because your data wasn't live?",
   "error": null
 }
