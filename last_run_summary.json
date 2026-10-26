@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "True software elegance isn't just about a clean mobile window; it's about the hidden engineering effort that abstracts complex database operations, molding data chaos into supply chain clarity. 💡 This meticulous abstraction drastically reduces user errors and training time. What's one 'hidden complexity' in your operations you wish your software could make effortless?",
+  "facebook_comment_text": "Building truly object-oriented code isn't just about syntax; it's architectural foresight that ensures features scale and evolve without expensive, disruptive overhauls. This prevents the inevitable 'rewrite from scratch' mandate. 👇 How do you empower your engineering teams to prioritize code quality when facing aggressive deadlines?",
   "error": null
 }
