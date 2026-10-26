@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 28,
-  "title": "The Zero Tech Debt Mandate",
+  "day": 29,
+  "title": "Unified Operations Control",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Building truly object-oriented code isn't just about syntax; it's architectural foresight that ensures features scale and evolve without expensive, disruptive overhauls. This prevents the inevitable 'rewrite from scratch' mandate. 👇 How do you empower your engineering teams to prioritize code quality when facing aggressive deadlines?",
+  "facebook_comment_text": "Beyond the login fatigue, the true engineering challenge is often the fragile data integrity caused by manual reconciliation across disparate systems. Consider the resource drain from constantly debugging sync issues or chasing conflicting reports. 💡 What's the biggest operational headache your team faces because systems don't 'talk' to each other natively?",
   "error": null
 }
