@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond the login fatigue, the true engineering challenge is often the fragile data integrity caused by manual reconciliation across disparate systems. Consider the resource drain from constantly debugging sync issues or chasing conflicting reports. 💡 What's the biggest operational headache your team faces because systems don't 'talk' to each other natively?",
+  "facebook_comment_text": "Building for millions of transactions from Nairobi means obsessing over distributed systems, smart caching strategies, and database optimization that can withstand global spikes. It’s about engineering resilience into the core. 🤔 What’s the most underestimated aspect of preparing a backend for true global scale?",
   "error": null
 }
