@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just lightweight queries, robust data synchronization and optimistic UI updates are critical. 🤔 How do you ensure data integrity and a smooth user experience when your users frequently drop from 4G to 2G, or go completely offline mid-transaction?",
+  "facebook_comment_text": "Moving from MVP success to millions of users demands a fundamental shift: architecting for resilience *and* rapid iteration. The real challenge often lies in refactoring foundational elements while keeping the innovation engine running. 💡 What’s your team's biggest hurdle when evolving a successful MVP into an enterprise-scale solution?",
   "error": null
 }
