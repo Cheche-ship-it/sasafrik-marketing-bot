@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "A visually stunning app can hemorrhage revenue if it's slow or confusing on diverse African networks. Real engineering prioritizes seamless load times and intuitive paths over unnecessary visual flair. The goal: flawless journey, not just pretty pixels. 💡 What's the biggest design-for-aesthetics trap you've seen impact conversion metrics?",
+  "facebook_comment_text": "Beyond just lightweight queries, robust data synchronization and optimistic UI updates are critical. 🤔 How do you ensure data integrity and a smooth user experience when your users frequently drop from 4G to 2G, or go completely offline mid-transaction?",
   "error": null
 }
