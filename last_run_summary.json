@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 7,
-  "title": "Goodbye Manual Data Entry",
+  "day": 8,
+  "title": "Legacy Systems Modernization",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real engineering challenge with unstructured data isn't just extraction, but building pipelines that *adapt* to diverse document templates and evolving business rules without constant manual retraining. That's where AI truly shines. 💡 Where do you see the greatest potential for AI-driven data transformation within your organization, beyond just \"faster\"?",
+  "facebook_comment_text": "The beauty of API encapsulation isn't just speed; it's about intelligent, agile transformation. You can modernize in phases, tackling high-impact areas first, minimizing disruption and accelerating feature delivery without a full rip-and-replace. 👇 What's one critical business function currently locked in your legacy apps that you dream of making API-accessible?",
   "error": null
 }
