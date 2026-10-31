@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 8,
-  "title": "Legacy Systems Modernization",
+  "day": 9,
+  "title": "Intelligent Email Parsing",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The beauty of API encapsulation isn't just speed; it's about intelligent, agile transformation. You can modernize in phases, tackling high-impact areas first, minimizing disruption and accelerating feature delivery without a full rip-and-replace. 👇 What's one critical business function currently locked in your legacy apps that you dream of making API-accessible?",
+  "facebook_comment_text": "The real magic of intelligent parsing? It's in teaching the AI to 'think' like your best back-office expert, handling those tricky edge cases most templated tools miss. 💡 This means less rework and more reliable, validated data flow from day one. What's the biggest data validation hurdle you currently face when processing inbound emails? 👇",
   "error": null
 }
