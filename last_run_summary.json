@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 9,
-  "title": "Intelligent Email Parsing",
+  "day": 10,
+  "title": "Automated Stock Audits",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "The real magic of intelligent parsing? It's in teaching the AI to 'think' like your best back-office expert, handling those tricky edge cases most templated tools miss. 💡 This means less rework and more reliable, validated data flow from day one. What's the biggest data validation hurdle you currently face when processing inbound emails? 👇",
+  "facebook_comment_text": "💡 The real engineering challenge with distributed inventory isn't just detecting mismatches, it's building a resilient, real-time data pipeline from every single endpoint to a unified source. Without robust integration and continuous validation, you're just moving the problem. 🤔 What's the biggest operational bottleneck your team faces when trying to get a single, accurate view of stock across...",
   "error": null
 }
