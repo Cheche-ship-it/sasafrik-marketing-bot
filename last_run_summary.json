@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "🤔 Beyond just internet access, designing truly high-availability USSD means engineering for backend resilience – ensuring transaction integrity and state synchronization even during peak network load or API outages. How do you approach data consistency across offline and online touchpoints?",
+  "facebook_comment_text": "Beyond just connectivity, the real engineering feat in cross-border payments is standardizing data schemas and error handling across fragmented regional ACHs and wallet APIs. This eliminates reconciliation headaches & ensures robust audit trails, critical for corporate scalability. 💡 What's been your toughest challenge in integrating diverse payment rails for regional expansion?",
   "error": null
 }
