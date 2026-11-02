@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 11,
-  "title": "The Localization Bridge",
+  "day": 12,
+  "title": "Power of USSD & SMS",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond just connecting, the real engineering challenge of localization lies in architecting for *resilience* and *low latency* across disparate payment rails and messaging platforms. It's about ensuring transactional integrity 24/7, even when external systems fluctuate. 💡 What's the most unexpected integration challenge your team has faced when building truly localized, mission-critical...",
+  "facebook_comment_text": "🤔 Beyond just internet access, designing truly high-availability USSD means engineering for backend resilience – ensuring transaction integrity and state synchronization even during peak network load or API outages. How do you approach data consistency across offline and online touchpoints?",
   "error": null
 }
