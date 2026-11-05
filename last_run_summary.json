@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 18,
-  "title": "The Database Disaster Test",
+  "day": 19,
+  "title": "Containerized Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 It's one thing to *have* geographically isolated, auto-replicating backups, but quite another to *regularly test* their failover and restore capabilities. Many businesses only discover gaps during a live incident! How often does your team conduct full DR drills, and what's the most surprising finding from your last test?",
+  "facebook_comment_text": "Decoupling a monolith brings immense scaling potential, but splitting data schemas without distributed transaction nightmares is often the true architectural Everest. 🤔 What's been your biggest challenge migrating data away from shared databases in a microservices journey?",
   "error": null
 }
