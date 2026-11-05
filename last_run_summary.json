@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Identifying those 'quiet traffic hours' isn't always obvious; it demands granular visibility beyond simple averages. 💡 Are you leveraging real-time observability to pinpoint idle resources and validate FinOps policies *before* the next bill? What level of cloud cost visibility does your team currently have, and where do you find the biggest blind spots?",
+  "facebook_comment_text": "💡 It's one thing to *have* geographically isolated, auto-replicating backups, but quite another to *regularly test* their failover and restore capabilities. Many businesses only discover gaps during a live incident! How often does your team conduct full DR drills, and what's the most surprising finding from your last test?",
   "error": null
 }
