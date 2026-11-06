@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 19,
-  "title": "Containerized Scale",
+  "day": 20,
+  "title": "The Security Shield Architecture",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Decoupling a monolith brings immense scaling potential, but splitting data schemas without distributed transaction nightmares is often the true architectural Everest. 🤔 What's been your biggest challenge migrating data away from shared databases in a microservices journey?",
+  "facebook_comment_text": "💡 Beyond perimeter firewalls, the real engineering reality is that even encrypted data can be compromised if underlying infrastructure ports have unpatched vulnerabilities or misconfigurations. Continuous vulnerability scanning and a proactive patching regimen are non-negotiable. What's your biggest challenge in maintaining a watertight 'no-blind-spots' port security posture? 👇",
   "error": null
 }
