@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 23,
-  "title": "Dynamic Email Retargeting",
+  "day": 24,
+  "title": "Real-time Customer Dashboards",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Capturing context is powerful, but the real engineering reality is *instantly* stitching that real-time behavioral data across disparate platforms to trigger truly hyper-personalized emails. It's more than just a CRM tag. 💡 How are you currently overcoming integration friction to achieve immediate, relevant follow-ups?",
+  "facebook_comment_text": "Those weekly reports? They often tell you *what went wrong* days ago, not *what's going wrong now*. Imagine catching a critical API slowdown or a conversion funnel bottleneck in real-time, preventing hours of lost revenue and customer frustration. 💡 What's the biggest 'I wish I knew this sooner' moment your team faced due to delayed data?",
   "error": null
 }
