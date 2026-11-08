@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 24,
-  "title": "Real-time Customer Dashboards",
+  "day": 25,
+  "title": "Predictive Enterprise Churn",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Those weekly reports? They often tell you *what went wrong* days ago, not *what's going wrong now*. Imagine catching a critical API slowdown or a conversion funnel bottleneck in real-time, preventing hours of lost revenue and customer frustration. 💡 What's the biggest 'I wish I knew this sooner' moment your team faced due to delayed data?",
+  "facebook_comment_text": "Beyond just spotting a drop in usage, the real engineering challenge lies in accurately *defining* the nuanced behavioral anomalies that truly signal churn for *your specific product lifecycle*. It's a continuous calibration process. 🤔 What metrics or user journey stages have you found most predictive, yet hardest to track accurately?",
   "error": null
 }
