@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 26,
-  "title": "The B2B Redesign Rule",
+  "day": 27,
+  "title": "Making Complex Effortless",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond aesthetics, an outdated platform creates significant technical debt. This isn't just about user experience; it's the escalating cost of maintenance, security vulnerabilities, and the struggle to integrate modern tools. 🤔 How has legacy tech impacted your strategic roadmap or ability to attract premium clients?",
+  "facebook_comment_text": "Underneath those clean interfaces, lies the art of database abstraction—not just hiding complexity, but *intelligently structuring* it for user intuition. This is an engineering reality check: the unseen cost of clunky UX is immense operational drag and technical debt. 💡 What's the biggest operational bottleneck your team has faced due to an overly complicated system?",
   "error": null
 }
