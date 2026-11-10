@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Underneath those clean interfaces, lies the art of database abstraction—not just hiding complexity, but *intelligently structuring* it for user intuition. This is an engineering reality check: the unseen cost of clunky UX is immense operational drag and technical debt. 💡 What's the biggest operational bottleneck your team has faced due to an overly complicated system?",
+  "facebook_comment_text": "💡 The true cost of \"quick fixes\" isn't just future refactoring; it's the lost market share from delayed features and crippling developer burnout. Sustainable engineering isn't a luxury; it's your greatest competitive advantage. 🤔 For tech leaders, what's been your biggest challenge in shifting mindset from short-term velocity to long-term code health?",
   "error": null
 }
