@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond the daily login fatigue, the real friction often stems from critical data discrepancies and endless manual reconciliation. Imagine the engineering hours lost maintaining duct-taped integrations! 🤔 What's the single biggest operational headache your team faces due to siloed data, beyond just logging in?",
+  "facebook_comment_text": "Scaling to millions of transactions isn't just about throwing more servers at it. It demands architecting for resilience & elasticity from day one, often with distributed microservices & intelligent caching strategies. 💡 What's your top lesson learned when building for truly global transaction volumes?",
   "error": null
 }
