@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Many A/B tests focus on clicks, but the real win is optimizing for *revenue events*. This means mapping every micro-interaction to its ultimate financial outcome, especially across diverse payment infrastructures. 👇 What's one 'beautiful' design element you A/B tested only to find it actively *reduced* your bottom line?",
+  "facebook_comment_text": "Beyond basic compression, have you truly audited your app's *every* API call for redundant data or excessive round trips? 💡 Often, the biggest gains come from optimizing payloads and reducing request frequency, not just network speed. How has focusing on fewer, smarter calls impacted your user retention in low-connectivity zones? 👇",
   "error": null
 }
