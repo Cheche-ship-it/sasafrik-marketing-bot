@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 30,
-  "title": "Engineered for Global Scale",
+  "day": 1,
+  "title": "Aesthetics vs. Revenue Call",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling to millions of transactions isn't just about throwing more servers at it. It demands architecting for resilience & elasticity from day one, often with distributed microservices & intelligent caching strategies. 💡 What's your top lesson learned when building for truly global transaction volumes?",
+  "facebook_comment_text": "Many A/B tests focus on clicks, but the real win is optimizing for *revenue events*. This means mapping every micro-interaction to its ultimate financial outcome, especially across diverse payment infrastructures. 👇 What's one 'beautiful' design element you A/B tested only to find it actively *reduced* your bottom line?",
   "error": null
 }
