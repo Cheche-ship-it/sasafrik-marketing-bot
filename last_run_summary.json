@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 2,
-  "title": "The Network Reality Check",
+  "day": 3,
+  "title": "MVP Journey to Millions",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond basic compression, have you truly audited your app's *every* API call for redundant data or excessive round trips? 💡 Often, the biggest gains come from optimizing payloads and reducing request frequency, not just network speed. How has focusing on fewer, smarter calls impacted your user retention in low-connectivity zones? 👇",
+  "facebook_comment_text": "Moving from MVP to enterprise production for a million users requires a tactical shift: evolving initial solutions into truly *resilient* systems. This means integrating security & scalability checks into every sprint, not just at deployment. 💡 What crucial architectural decisions paid off most for your team when crossing the 100K to 1M user threshold?",
   "error": null
 }
