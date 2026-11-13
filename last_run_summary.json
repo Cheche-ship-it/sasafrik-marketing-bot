@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 3,
-  "title": "MVP Journey to Millions",
+  "day": 4,
+  "title": "UX Friction Killers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Moving from MVP to enterprise production for a million users requires a tactical shift: evolving initial solutions into truly *resilient* systems. This means integrating security & scalability checks into every sprint, not just at deployment. 💡 What crucial architectural decisions paid off most for your team when crossing the 100K to 1M user threshold?",
+  "facebook_comment_text": "Often, the real friction isn't just poor design, but the hidden complexities of integrating new UIs with legacy backend systems. Optimizing isn't just front-end; it's a full-stack engineering challenge. 💡 What's the toughest technical hurdle you've faced when trying to streamline an enterprise checkout or registration process?",
   "error": null
 }
