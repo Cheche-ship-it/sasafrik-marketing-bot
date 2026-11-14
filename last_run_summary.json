@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 4,
-  "title": "UX Friction Killers",
+  "day": 5,
+  "title": "The Mobile First Empire",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Often, the real friction isn't just poor design, but the hidden complexities of integrating new UIs with legacy backend systems. Optimizing isn't just front-end; it's a full-stack engineering challenge. 💡 What's the toughest technical hurdle you've faced when trying to streamline an enterprise checkout or registration process?",
+  "facebook_comment_text": "Building truly mobile-first isn't just about responsive design; it's about robust data architecture that handles intermittent connectivity gracefully. Ensuring seamless offline-to-online sync without conflicts is paramount for data integrity. 👇 How are you tackling complex data synchronization for your distributed teams?",
   "error": null
 }
