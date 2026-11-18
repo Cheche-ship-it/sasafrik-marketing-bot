@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 12,
-  "title": "Power of USSD & SMS",
+  "day": 13,
+  "title": "Multi-Currency Banking Layers",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Bridging offline USSD with high-tier web logic isn't just about presence; it's about maintaining real-time data consistency and transactional integrity across disparate channels. Many underestimate the architectural finesse required here. How are you ensuring your mission-critical data remains synchronized for *all* users, regardless of connectivity?",
+  "facebook_comment_text": "Bridging regional ACHs and digital wallets demands more than just connectivity; it requires architecting robust fault tolerance and real-time reconciliation engines. This ensures that even with diverse infrastructure, every cross-border transaction is resilient and verifiable. 💡 What's your biggest engineering headache when ensuring payment reliability across disparate systems?",
   "error": null
 }
