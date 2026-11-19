@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 14,
-  "title": "The WhatsApp Commerce Engine",
+  "day": 15,
+  "title": "Real-Time B2B Ledger Sync",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Imagine cutting 80% of customer drop-offs by meeting them exactly where they are: WhatsApp. The friction of multi-page forms is obsolete when secure, instant inventory views & transactions happen conversationally. 👇 What's one key bottleneck you've already identified in your current online sales process?",
+  "facebook_comment_text": "Beyond just fraud, imagine the engineering effort saved from building bespoke APIs for every merchant. Our approach centralizes that integration, cutting development cycles significantly. 💡 How much internal dev time are you currently allocating to bespoke merchant statement integrations, and what's your biggest pain point?",
   "error": null
 }
