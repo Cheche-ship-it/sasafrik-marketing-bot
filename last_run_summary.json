@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 16,
-  "title": "100% Uptime Guarantee",
+  "day": 17,
+  "title": "What is FinOps?",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 The true cost of downtime isn't just lost transactions; it's the *opportunity cost* of delayed innovation and the heightened security risks during recovery. Our zero-trust containers ensure continuous resilience, not just traffic handling. What proactive strategy has genuinely saved *your* team from a major outage?",
+  "facebook_comment_text": "Scaling compute down to absolute zero isn't just about flipping a switch; it often hinges on embracing stateless architectures or serverless functions to maintain service resilience. 💡 What architectural shifts have you found most crucial in unlocking true cost-per-request efficiency?",
   "error": null
 }
