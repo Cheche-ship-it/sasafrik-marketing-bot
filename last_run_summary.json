@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 17,
-  "title": "What is FinOps?",
+  "day": 18,
+  "title": "The Database Disaster Test",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Scaling compute down to absolute zero isn't just about flipping a switch; it often hinges on embracing stateless architectures or serverless functions to maintain service resilience. 💡 What architectural shifts have you found most crucial in unlocking true cost-per-request efficiency?",
+  "facebook_comment_text": "💡 Beyond just replication, the real engineering feat is guaranteeing near-zero RPO with continuous validation that your restored data is truly consistent and *usable*. Many backups exist, but few get truly battle-tested before disaster strikes. 🤔 What's your most critical bottleneck in achieving rapid, verified database recovery?",
   "error": null
 }
