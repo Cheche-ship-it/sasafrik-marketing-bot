@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 18,
-  "title": "The Database Disaster Test",
+  "day": 19,
+  "title": "Containerized Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "💡 Beyond just replication, the real engineering feat is guaranteeing near-zero RPO with continuous validation that your restored data is truly consistent and *usable*. Many backups exist, but few get truly battle-tested before disaster strikes. 🤔 What's your most critical bottleneck in achieving rapid, verified database recovery?",
+  "facebook_comment_text": "Beyond just scaling up, true dynamic growth means isolating services to prevent cascading failures & enable independent deployments. This boosts team agility. 🤔 What's been your organization's biggest 'aha!' moment or unexpected challenge when moving to a microservices architecture?",
   "error": null
 }
