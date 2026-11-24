@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 24,
-  "title": "Real-time Customer Dashboards",
+  "day": 25,
+  "title": "Predictive Enterprise Churn",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Real-time dashboards aren't just pretty visuals; they demand robust, low-latency data pipelines and rigorous integrity checks. The true power unlocks when you can *confidently* make split-second operational decisions, not just observe historical trends. 🤔 What's the biggest bottleneck you face in turning immediate data into decisive action for your teams?",
+  "facebook_comment_text": "Building robust predictive churn models often hinges on deeply understanding *which* behavioral anomalies truly signal risk, not just activity dips. It's about intricate feature engineering that captures intent and value perception. 💡 How do you currently identify the most critical user touchpoints or data signals that precede churn in your business, and what's your biggest hurdle?",
   "error": null
 }
