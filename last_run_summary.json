@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 27,
-  "title": "Making Complex Effortless",
+  "day": 28,
+  "title": "The Zero Tech Debt Mandate",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Crafting software that makes complex operations feel effortless requires a delicate balance: powerful backend logic must be meticulously translated into intuitive front-end actions. It’s about effective abstraction, not simplification by omission. 🤔 What's the biggest challenge you've faced when trying to distill intricate processes into a truly user-friendly interface?",
+  "facebook_comment_text": "Sustainable velocity isn't about shipping features faster today, but ensuring you can ship *any* feature efficiently tomorrow. Ignoring strict documentation and robust testing isn't just a technical oversight, it's a strategic impediment to business agility. 🤔 What's one critical business pivot your organization struggled to execute smoothly due to accumulated tech debt?",
   "error": null
 }
