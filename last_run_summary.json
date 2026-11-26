@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 29,
-  "title": "Unified Operations Control",
+  "day": 30,
+  "title": "Engineered for Global Scale",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Beyond context-switching, the real cost of siloed apps often lies in latent data inconsistencies and the security risks of API spaghetti. It's not just about workflow; it's about empowering truly reliable, real-time decision-making. 💡 What's one unexpected operational challenge your team encountered due to fragmented systems?",
+  "facebook_comment_text": "It's not just about handling millions of transactions, but sustaining them *seamlessly* under diverse global loads. This requires deep dives into database sharding, efficient caching, and resilient API gateways. 🤔 Tech leaders, what's one critical 'bottleneck' technology you had to rethink entirely for truly global scale?",
   "error": null
 }
