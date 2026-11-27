@@ -1,9 +1,9 @@
 {
   "mode": "REELS",
-  "day": 1,
-  "title": "Aesthetics vs. Revenue Call",
+  "day": 2,
+  "title": "The Network Reality Check",
   "facebook_upload": true,
   "facebook_comment_posted": true,
-  "facebook_comment_text": "Seamless user journeys aren't just about pretty pixels; they're engineered for performance under *all* conditions. Think beyond design sprints to relentless A/B testing on every micro-interaction and network latency impact. 💡 What's the toughest revenue-blocking friction point your team is currently debugging on your customer journey?",
+  "facebook_comment_text": "💡 It's not just about simulating low bandwidth; it's about replicating *real-world packet loss and intermittent connections*. True usability testing reveals where your app breaks under pressure, beyond static lab conditions. How have you adapted your testing environments to truly reflect dynamic African network realities?",
   "error": null
 }
